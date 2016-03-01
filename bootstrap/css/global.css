@@ -1,0 +1,39 @@
+/* En-tête */
+header {
+	background-color: red;
+	width: 100%;
+}
+
+
+
+/* Pour cacher le menu */
+nav {
+	position: absolute;
+	left: -130px;
+	width:180px;
+}
+	
+/* Pour afficher le menu lorsque la souris passe dessus */
+nav:hover {
+	left: 0px;
+}
+
+/* Structure de la page global */
+div#bandeau {
+	width: 100%;
+	height:50px;
+	background-color:#00CCFF;
+	}
+div#contenu {
+	width:100%;
+	height:400px;
+	background-color:#ffffff;
+	}
+/* Pied de page fixe */
+footer {
+	position:fixed;
+	bottom:-10px;
+	}
+footer:hover {
+	bottom: 0px;
+}
