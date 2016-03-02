@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<header>
+	<title>Création Média</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/menu.css" />
+	<link rel="stylesheet" href="css/global.css" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+	<script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<h1 class="blink">DTA-Ingénierie</h1>
+		
+</header>
+<body>
+	<!-- Bloc Menu -->
+	<div>
+		<nav>
+			<ul id="menu-accordeon">
+				<li><a href="index.html">Accueil</a>
+					<ul>
+						<li><a href="connexion.html">Connexion</a></li>
+						<li><a href="#">Média</a></li>
+						<li><a href="#l">Adhérent</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Média</a>
+					<ul>
+						<li><a href="addMedia.html">Création</a></li>
+						<li><a href="#">Consultation</a></li>
+						<li><a href="#l">Recherche</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Adhérent</a>
+					<ul>
+						<li><a href="#">Création</a></li>
+						<li><a href="#">Consultation</a></li>
+						<li><a href="#">Recherche</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Contenu de la page -->
+	
+	<!-- Enveloppe de toute la page -->
+	<div class="container">
+		<div class="row">
+			<div>
+				<!-- Formulaire connexion -->
+				<form id="formLogin" class="form-horizontal" role="form">
+					<div>
+						<h2>Création</h2>
+					</div>
+					<div class="form-group">
+						<label for="inputTitre" class="col-sm-2 control-label hidden-xs">Titre</label>
+						<div class="col-xs-12 col-sm-9 col-md-6 col-lg-3">
+							<input type="text" class="form-control" id="inputTitre" placeholder="Titre" required="required">
+<!-- 							<div class="input-group"> -->
+<!-- 								<span class="input-group-addon"> -->
+<!-- 									<span class="glyphicon glyphicon-user"></span> -->
+<!-- 								</span> -->
+<!-- 								<input type="text" class="form-control" id="inputUsername" placeholder="Username" required="required"> -->
+<!-- 							</div> -->
+						</div>
+					</div>
+					<div class="form-group">
+						<style>
+						.placeholder {
+							color : grey;
+						}
+						</style>
+						<label for="inputType" class="col-sm-2 control-label hidden-xs">Type</label>
+						<div class="col-xs-12 col-sm-9 col-md-6 col-lg-3">
+							<select class="form-control"> 
+								<option class="placeholder" selected>Type</option>
+								<option value="Livre">Livres</option> 
+							  	<option value="CD">CD</option>
+							  	<option value="DVD">DVD</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputAuteur" class="col-sm-2 control-label hidden-xs">Auteur</label>
+						<div class="col-xs-12 col-sm-9 col-md-6 col-lg-3">
+							<input type="text" class="form-control" id="inputAuteur" placeholder="Auteur" required="required">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">Créer</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div>				
+		<footer>
+			<div>
+				<h3>Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a></h3>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

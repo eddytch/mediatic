@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<header>
 	<title>connexion</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/menu.css" />
@@ -11,21 +11,22 @@
 
 	<script src="bootstrap/js/jquery-1.12.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-</head>
+	
+	<h1 class="blink">DTA-Ingénierie</h1>
+</header>
 <body>
 	<!-- Enveloppe de toute la page -->
 	<div class="container">
 		<div class="row">
 			<div>
-				<h2>Login</h2>
-			</div>
-			<div>
-<!-- 				<h2>Login</h2> -->
 				<!-- Formulaire connexion -->
-				<form class="form-horizontal" role="form">
+				<form id="formLogin" class="form-horizontal" role="form">
+					<div>
+						<h2>Login</h2>
+					</div>
 					<div class="form-group">
-						<label for="inputUsername" class="col-sm-2 control-label">Username</label>
-						<div class="col-sm-10">
+						<label for="inputUsername" class="col-sm-2 control-label hidden-xs">Username</label>
+						<div class="col-xs-12 col-sm-9 col-md-6 col-lg-3">
 							<div class="input-group">
 								<span class="input-group-addon">
 									<span class="glyphicon glyphicon-user"></span>
@@ -35,13 +36,13 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPwd" class="col-sm-2 control-label">Password</label>
-						<div class="col-sm-10">
+						<label for="inputPwd" class="col-sm-2 control-label hidden-xs">Password</label>
+						<div class="col-xs-12 col-sm-9 col-md-6 col-lg-3">
 							<div class="input-group">
 								<span class="input-group-addon">
 									<span class="fa fa-key"></span>
 								</span>
-								<input type="text" class="form-control" id="inputPwd" placeholder="Password" required="required">
+								<input type="password" class="form-control" id="inputPwd" placeholder="Password" required="required">
 							</div>
 						</div>
 					</div>
@@ -60,6 +61,15 @@
 				</form>
 			</div>
 		</div>
+	</div>
+
+	<!-- Footer -->
+	<div>				
+		<footer>
+			<div>
+				<h3>Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a></h3>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>

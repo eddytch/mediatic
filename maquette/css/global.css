@@ -1,12 +1,19 @@
 /* Header */
 header {
     height:100px;
-    background-color:#c0c0c0;
-/*     background-image: url("img/img-header.jpg"); */
+/*     background-color:#c0c0c0; */
+    background-image: url("../img/header-biblio2.jpeg");
+    background-repeat: no-repeat;  
+/*     background-size: cover; */
     border:1px solid #CCC;
     margin:0px auto;
-    text-align: center;
+    text-align: right;
     padding: 10px;
+    
+/*     background: -webkit-repeating-linear-gradient(gray, white 10%);  */
+/*     background: -o-repeating-linear-gradient(gray, white 10%);  */
+/*     background: -moz-repeating-linear-gradient(gray, white 10%); */
+/*     background: repeating-linear-gradient(gray, white 10%); */
 }
 
 /* titre clignotant */
@@ -22,7 +29,7 @@ footer {
 	width: 100%;
 	position: fixed;
 	padding: 5px;
-	background-color: #c0c0c0;
+	background-color: #d8d8d8;
 	bottom: -15px;
 	height: 50px;
 	border: 1px solid #CCC;
@@ -35,11 +42,14 @@ footer:hover {
 	transition: bottom 0.5s;
 }
 
-form {
+#a-Decaler {
+    margin-left: 100px;
+}
+
+#formLogin {
 	border-style: solid;
-	width: 50%;
+	border-radius : 1em;
+	border-color : #d8d8d8;
+	margin-top: 50px;
 	padding: 20px;
-	
-/* 	border-color: red; */
-/* 	border-width: 5px; */
 }

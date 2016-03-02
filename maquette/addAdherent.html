@@ -5,51 +5,56 @@
 <title>Ajouter un Adhérent</title>
 
 <meta charset="utf-8">
-<!-- <link -->
-<!-- 	rel="stylesheet" -->
-<!-- 	href="css/menu.css" /> -->
-<!-- <link -->
-<!-- 	rel="stylesheet" -->
-<!-- 	href="css/global.css" /> -->
-<link
-	rel="stylesheet"
-	href="css/adherent.css" />
+<link rel="stylesheet" href="css/menu.css" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/adherent.css" />
 
-<link
-	rel="stylesheet"
-	href="bootstrap/css/bootstrap.min.css">
-<link
-	rel="stylesheet"
-	href="bootstrap/css/bootstrap-theme.min.css">
-<link
-	rel="stylesheet"
-	href="font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
 <script src="bootstrap/js/jquery-1.12.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<link
-	rel="stylesheet"
-	href="font-awesome/css/font-awesome.min.css">
-
-<style type="text/css">
-.myInputIcon {
-	
-}
-</style>
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
 </head>
 <body>
+	<!-- Bloc Menu -->
+	<div>
+		<nav>
+			<ul id="menu-accordeon">
+				<li><a href="index.html">Accueil</a>
+					<ul>
+						<li><a href="connexion.html">Connexion</a></li>
+						<li><a href="#">Média</a></li>
+						<li><a href="#l">Adhérent</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Média</a>
+					<ul>
+						<li><a href="addMedia.html">Création</a></li>
+						<li><a href="#">Consultation</a></li>
+						<li><a href="#l">Recherche</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Adhérent</a>
+					<ul>
+						<li><a href="addAdherent.hmtl">Création</a></li>
+						<li><a href="#">Consultation</a></li>
+						<li><a href="#">Recherche</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
 	<div class="container-fluid">
 		<section>
 			<div class="titre col-sm-offset-3 cod-sm-6 cod-xs-6">
 				<h2>Ajouter un Adhérent</h2>
 			</div>
 			<div>
-				<form
-					class="form-horizontal"
-					method="get"
-					action=".">
+				<form class="form-horizontal" method="get" action=".">
 
 					<!--Déb FormBloc 01 -->
 					<div>
@@ -62,56 +67,31 @@
 
 							<!-- déb nom et prénom -->
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
-									for="nom">Nom :</label>
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="nom">Nom
+									:</label> <label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="prenom">Prénom :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<span
-									class="topLeft input-group-addon"
-									id="basic-addon1">
+								<span class="topLeft input-group-addon" id="basic-addon1">
 									<span class="fa fa-user"></span>
-								</span>
-
-								<input
-									name="nom"
-									placeholder="Nom"
-									type="text"
-									required="required"
-									aria-describedby="basic-addon1"
-									class="topRight form-control" />
-
-								<input
-									name="prenom"
-									placeholder="Prénom"
-									type="text"
-									class="form-control middle"
-									required="required"
-									aria-describedby="basic-addon1" />
+								</span> <input name="nom" placeholder="Nom" type="text"
+									required="required" aria-describedby="basic-addon1"
+									class="topRight form-control" /> <input name="prenom"
+									placeholder="Prénom" type="text" class="form-control middle"
+									required="required" aria-describedby="basic-addon1" />
 							</div>
 							<!-- fin nom et prénom -->
 
 							<!-- deb email -->
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="email">E-mail :</label>
 							</div>
 
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<span
-									class="input-group-addon"
-									id="basic-addon1">@</span>
-
-								<input
-									name="email"
-									placeholder="monEmail@exemple.fr"
-									type="email"
-									class="form-control"
-									required="required"
+								<span class="input-group-addon" id="basic-addon1">@</span> <input
+									name="email" placeholder="monEmail@exemple.fr" type="email"
+									class="form-control" required="required"
 									aria-describedby="basic-addon1" />
 							</div>
 							<!-- fin email -->
@@ -119,23 +99,15 @@
 
 							<!-- deb date de naissance -->
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="dateN">Né(e) le :</label>
 							</div>
 
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<span
-									class="input-group-addon"
-									id="basic-addon1">
-									<span class="fa fa-birthday-cake"></span>
-								</span>
-								<input
-									name="dateN"
-									placeholder="jj/mm/aaaa"
-									type="date"
-									class="form-control"
-									required="required"
+								<span class="input-group-addon" id="basic-addon1"> <span
+									class="fa fa-birthday-cake"></span>
+								</span> <input name="dateN" placeholder="jj/mm/aaaa" type="date"
+									class="form-control" required="required"
 									aria-describedby="basic-addon1" />
 							</div>
 							<!-- fin date de naissance -->
@@ -152,53 +124,35 @@
 
 						<div class="formBlc ">
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="numVoie">N° et voie :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<input
-									name="numVoie"
-									type="text"
-									class="form-control"
+								<input name="numVoie" type="text" class="form-control"
 									placeholder="1, rue de ......." />
 							</div>
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="compl">Complément :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<input
-									name="compl"
-									placeholder="lieu dit, boite postale, ...."
-									type="text"
-									class="form-control" />
+								<input name="compl" placeholder="lieu dit, boite postale, ...."
+									type="text" class="form-control" />
 							</div>
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
-									for="cP">Code postal :</label>
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="cP">Code
+									postal :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<input
-									name="cP"
-									placeholder="Code postal"
-									type="text"
-									maxlength="5"
-									pattern="[0-9]{5}"
-									class="form-control" />
+								<input name="cP" placeholder="Code postal" type="text"
+									maxlength="5" pattern="[0-9]{5}" class="form-control" />
 							</div>
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="ville">Ville :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<input
-									name="ville"
-									placeholder="Ville"
-									type="text"
+								<input name="ville" placeholder="Ville" type="text"
 									class="form-control" />
 							</div>
 						</div>
@@ -214,29 +168,20 @@
 
 						<div class="formBlc">
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="dateCotis">Cotisation payée le :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<input
-									name="dateCotis"
-									type="date"
-									class="form-control"
+								<input name="dateCotis" type="date" class="form-control"
 									placeholder="Cotisation payée le" />
 							</div>
 							<div class="hidden-xs col-sm-6 col-md-6 col-lg-6">
-								<label
-									class="col-xs-12 col-s-12 col-md-12 col-lg-12"
+								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12"
 									for="montantCotis">Montant de la cotisation :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<input
-									name="montantCotis"
-									placeholder="xx,xx €"
-									type="number"
-									class="form-control " />
-								<span class="input-group-addon">€</span>
+								<input name="montantCotis" placeholder="xx,xx €" type="number"
+									class="form-control " /> <span class="input-group-addon">€</span>
 							</div>
 						</div>
 					</div>
@@ -244,41 +189,11 @@
 
 					<div class="">
 						<div class="col-sm-offset-3 cod-sm-6 cod-xs-6">
-							<input
-								type="submit"
-								class="btn btn-default"
-								value="Ajouter" />
+							<input type="submit" class="btn btn-default" value="Ajouter" />
 						</div>
 					</div>
 				</form>
 			</div>
-
-
-
-
-			<!-- 						<label -->
-			<!-- 							class="col-sm-6 hidden-xs" -->
-			<!-- 							for="dateN">Né(e) le :</label> -->
-			<!-- 						<div class="input-group col-sm-6 col-xs-12"> -->
-			<!-- 						<span class="input-group-addon" id="basic-addon1"><i class="fa fa-home"></i></span> -->
-			<!-- 							<input -->
-			<!-- 								name="dateN" -->
-			<!-- 								placeholder="jj/mm/aaaa" -->
-			<!-- 								type="date" -->
-			<!-- 								class="form-control" -->
-			<!-- 								required="required" -->
-			<!-- 								aria-describedby="basic-addon1" /> -->
-			<!-- 															<input -->
-			<!-- 								name="dateN" -->
-			<!-- 								placeholder="jj/mm/aaaa" -->
-			<!-- 								type="date" -->
-			<!-- 								class="form-control" -->
-			<!-- 								required="required" -->
-			<!-- 								aria-describedby="basic-addon1" /> -->
-			<!-- 						</div> -->
-			<!-- 					</div> -->
-
-
 		</section>
 
 
@@ -287,17 +202,3 @@
 
 </body>
 </html>
-
-
-
-<!-- classe Adhérent -->
-<!-- int		idUnique -->
-<!-- string	nom -->
-<!-- string	prenom -->
-<!-- string email -->
-<!-- int		dateNaissance -->
-<!-- 		'-> display age -->
-<!-- string	adresse[] { rue, compement , cp, ville} -->
-<!-- int		nbMediaEnLocation -->
-<!-- int		date de payment de cotisation -->
-<!-- string	listMédiaConsulté[] -->
