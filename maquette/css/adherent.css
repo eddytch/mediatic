@@ -1,35 +1,18 @@
-
-
 .formBlc {
 	border: 2px solid #a1a1a1;
 	padding: 5px;
 	margin-bottom: 10px;
-
-	border-radius:1em 1em 1em 1em ;
-	
+	border-radius: 1em 1em 1em 1em;
 }
 
-.inputLabel {
-	
+.myIconWidth {
+	width: 14px;
 }
 
-
-.middle {
+formBlc>input {
 	border-radius: 0px;
 }
 
-.topRight {
-	border-top-right-radius: 4px;
-}
-
-.topLeft {
-	border-top-left-radius: 4px;
-}
-
-.bottomLeft {
-	border-bottom-left-radius: 4px;
-}
-
-.bottomRight {
-	border-bottom-right-radius: 4px;
+.input-group .form-control[type=date] {
+	overflow: hidden;
 }
