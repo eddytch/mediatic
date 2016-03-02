@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <title>Rechercher un adhérentr</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/rechercherMedia.css" />
+    <script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- header -->
+<header>
+    <h1 class="blink">DTA-Ingénierie</h1>
+</header>
+<!-- Bloc Menu -->
+<div>
+    <nav>
+        <ul id="menu-accordeon">
+            <li><a href="index.html">Accueil</a>
+                <ul>
+                    <li><a href="connexion.html">Connexion</a></li>
+                    <li><a href="#">Média</a></li>
+                    <li><a href="#l">Adhérent</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Média</a>
+                <ul>
+                    <li><a href="addMedia.html">Création</a></li>
+                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#l">Recherche</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Adhérent</a>
+                <ul>
+                    <li><a href="addAdherent.hmtl">Création</a></li>
+                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#">Recherche</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="container-fluid" >
+    <div class="row center-block">
+        <div class="col-md-6 col-s-12 col-xs-12" id="partieRechercher">
+            <form class="form-inline">
+                <!-- champ de recherche -->
+                <div class="input-group" id="mainRechercher">
+                    <label for="inputRechercher" class="hidden"> recherche : </label>
+                    <input type="text" name="inputRechercher" id="inputRechercher" class="form-control" placeholder="rechercher"/>
+                    <!-- bouton de recherche -->
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary btn-default"  type="button"> <span class="fa fa-search"></span> </button>
+                    </span>
+                    <!--bouton d'ajout -->
+                    <button class="btn btn-default fa fa-plus boutonAjout form-control" id="ajout" > </button>
+                </div>
+
+
+                <a class="visible-xs visible-sm" id="rechercheAvanceLien">afficher/masquer recherche avancé</a>
+            </form>
+        </div>
+    </div>
+    <div class="row center-block hidden-md hidden-lg ">
+        <div class="col-md-12 col-s-12 col-xs-12">
+            <!-- La partie de recherche avancé -->
+            <form class='form-inline' id="rechercherAvance">
+
+            </form>
+        </div>
+    </div>
+    <div class="responsive-table-line block-center" id="resultatRecherche">
+        <table id="tableauRecherche" class="table table-hover table-bordered ">
+            <!-- premiere ligne contenant le titre des colonnes -->
+            <thead>
+            <tr id="premiereLigne" >
+            </tr>
+            </thead>
+            <!-- les autres lignes du tableau
+             ...
+             -->
+            <tbody id="bodyRecherche">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        //tableau contenant le nom des colonnes
+        var tableauColonne = ["Id adhérent","Nom et prénom","Date de naissance","A jour cotisation","Nombre de médias"] ;
+        var tableauDonnees = [
+            ["Le livre d'eddy","roman","eddy","dimitri","04/03/2015"],
+            ["Le livre de louis","roman","louis","eddy","12/12/2015"],
+            ["Le livre de dimitri","roman","dimitri","louis","04/10/2015"],
+            ["Un essai long","essai","jean jacques","dimitri","01/01/2016"]
+        ];
+
+        var divRech = $("<div class='row hidden-md hidden-lg'>") ;
+
+        //Le tableau pour les couleurs pour les colonnes
+        var tableauCouleurs = ["text-primary","text-info","text-success","text-warning","text-danger"] ;
+
+        //Pour chaque nom de colonne
+        for(var colonne in tableauColonne) {
+            var valeurColonne = tableauColonne[colonne];
+            var inputRechercherPremiere = "" ;
+            //Pour les trois premières colonnes
+            if (colonne < 3) {
+                //Pour ajouter les boutons de recherche lorsqu'on est en mode smartphone ou tablette
+                divRech.append('<div class="input-group  rechercherAnnexe">' +
+                        '<input type="text" name="inputRechercher" id="inputRechercher' + colonne + '" class="form-control inline" placeholder="rechercher ' + valeurColonne + '"/>' +
+                        '<span class="input-group-btn">' +
+                        '<button class="btn btn-default  inline boutonRechercher"> <span class="fa fa-search"></span>' +
+                        '</button>' +
+                        '</span>' +
+                        '</div>'
+                );
+                inputRechercherPremiere = '<form class="form-inline">' + '' +
+                        '<div class="input-group">' +
+                        '<input type="text" name="rechercher' + colonne + '" id="rechercher' + colonne + '" class="form-control rechercher hidden-sm hidden-xs form-control" />' +
+                        '<span class="input-group-btn">' +
+                        '<button class="btn btn-default  inline hidden-sm hidden-xs"><span class="fa fa-search"></span></button>' +
+                        '</span>' +
+                        '</div>' +
+                        '</form>'
+            }
+            //On ajoute le titre de la colonne avec un bouton pour rechercher
+            $("#premiereLigne").append(
+                    '<th class="' + tableauCouleurs[colonne] + '"> <h2>' + valeurColonne + '</h2>' +
+                    inputRechercherPremiere+
+                    '</th>'
+            );
+
+
+
+        }
+
+        $('#rechercherAvance').append(divRech) ;
+
+        //Pour chaque ligne de données
+        for(var ligneDonneesIndex in tableauDonnees) {
+            //Pour chaque colonne dans la ligne
+            var bodyRecherche = $("#bodyRecherche");
+            var tr = $("<tr>") ;
+
+            var ligneDonnees = tableauDonnees[ligneDonneesIndex] ;
+            for (var donnees in ligneDonnees) {
+                //On ajoute la colonne
+                tr.append(
+                        '<td data-title="'+tableauColonne[donnees]+'" class="'+tableauCouleurs[donnees]+'">' + ligneDonnees[donnees] +
+                        '</td>');
+            }
+            bodyRecherche.append(tr) ;
+
+        }
+
+        //On cache la recherche avancé en mode smartphone
+        $('#rechercherAvance').hide() ;
+        // Lors d'un clic sur le lien de recherche avancé
+        $("#rechercheAvanceLien").click(function(){
+            //On affiche ou on masque la partie de recherche avance en fonction de la visibilité de cette partie
+            $('#rechercherAvance').toggle() ;
+
+        });
+    </script>
+</div>
+
+<!-- Footer -->
+<div>
+    <footer>
+        <div>
+            <h3>Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a></h3>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
