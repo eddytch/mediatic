@@ -3,6 +3,8 @@ package model;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 public class Auteur{
 
@@ -15,6 +17,9 @@ public class Auteur{
 
     @Column
     private String prenom ;
+
+    @OneToMany(mappedBy = "auteurMedia")
+    private List<Media> listeMedias ;
 
     public Auteur(){
 
@@ -39,5 +44,13 @@ public class Auteur{
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public List<Media> getListeMedias() {
+        return listeMedias;
+    }
+
+    public void setListeMedias(List<Media> listeMedias) {
+        this.listeMedias = listeMedias;
     }
 }
