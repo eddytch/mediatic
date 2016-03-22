@@ -8,7 +8,7 @@ public class Utilisateur {
     @GeneratedValue
 	private Long id;
 	private String login;
-	private String mdp;// TODO criptage sql
+	private String mdp;// TODO chiffrement
 	
 	public Utilisateur(){
 		
