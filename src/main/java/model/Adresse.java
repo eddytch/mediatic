@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +21,7 @@ public class Adresse {
 	private String pays;
 	
 	@OneToMany(mappedBy = "adresse")
-	private Adherent adherent;
+	private List<Adherent> adherents;
 	
 	public Adresse() {
 		
@@ -87,6 +89,14 @@ public class Adresse {
 
 	public void setPays(String pays) {
 		this.pays = pays;
+	}
+
+	public List<Adherent> getAdherents() {
+		return adherents;
+	}
+
+	public void setAdherents(List<Adherent> adherents) {
+		this.adherents = adherents;
 	}
 	// Fin Getters & Setters
 
