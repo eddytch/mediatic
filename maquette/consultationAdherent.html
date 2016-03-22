@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Ajouter un Adhérent</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/adherent.css" />
+    <link rel="stylesheet" href="css/consultationAdherent.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    <h1 class="blink">DTA-Ingénierie</h1>
+</header>
+<div>
+    <nav>
+        <ul id="menu-accordeon">
+            <li><a href="index.html">Accueil</a>
+                <ul>
+                    <li><a href="connexion.html">Connexion</a></li>
+                    <li><a href="#">Média</a></li>
+                    <li><a href="#l">Adhérent</a></li>
+                </ul></li>
+            <li><a href="#">Média</a>
+                <ul>
+                    <li><a href="addMedia.html">Création</a></li>
+                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#l">Recherche</a></li>
+                </ul></li>
+            <li><a href="#">Adhérent</a>
+                <ul>
+                    <li><a href="addAdherent.hmtl">Création</a></li>
+                    <li><a href="#">Consultation</a></li>
+                    <li><a href="#">Recherche</a></li>
+                </ul></li>
+        </ul>
+    </nav>
+</div>
+<div class="container-fluid">
+    <section>
+        <div class="titre col-sm-offset-3 cod-sm-6 cod-xs-6">
+            <h2>Ajouter un Adhérent</h2>
+        </div>
+        <div>
+            <form class="form-horizontal" method="get" action=".">
+                <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-5 col-lg-ofset-2 col-lg-4">
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Informations personnelles</label>
+                    </div>
+                    <div class="formBlc">
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="nom">Nom :</label>
+                            <label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="prenom">Prénom :</label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<span class="topLeft input-group-addon" >
+									<span class="fa fa-user myIconWidth"></span>
+								</span>
+                            <input class="form-control" id="nom" name="nom" placeholder="LANOË" type="text" required="required" aria-describedby="basic-addon1" />
+                            <input class="form-control" id="prenom" name="prenom" placeholder="Dimitri" type="text" required="required" aria-describedby="basic-addon1" />
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="email">E-mail :</label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<span class="input-group-addon">
+									<span>@</span>
+								</span>
+                            <input id="email" name="email" placeholder="dimitrilanoe35@gmail.com" type="email" class="form-control" required="required" aria-describedby="basic-addon1" />
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="dateN">Né(e) le :</label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<span class="input-group-addon" id="basic-addon1">
+									<span class="fa fa-birthday-cake"></span>
+								</span>
+                            <input id="dateN" name="dateN" value="1992-10-22" placeholder="1992-10-22" type="date" class="form-control" required="required" autocomplete="on" max="2016-12-31" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-5 col-lg-ofset-2 col-lg-4">
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Adresse postale</label>
+                    </div>
+                    <div class="formBlc ">
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label  class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="numVoie">Numéro de voie </label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <input id="numVoie" name="numVoie" type="text" class="form-control" placeholder="4 rue Henry Becquerel" />
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="compl">Complément :</label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <input id="compl" name="compl" placeholder="" type="text" class="form-control" />
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="cP">Code postal</label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <input id="cP" name="cP" placeholder="35400" type="text" maxlength="5" pattern="[0-9]{5}" class="form-control" />
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                            <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="ville">Ville :</label>
+                        </div>
+                        <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <input id="ville" name="ville" placeholder="Montpellier" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-5 col-lg-ofset-2 col-lg-4">
+                    <div class="row">
+                        <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Informations d'adhésion</label>
+                    </div>
+                    <div class="row" >
+                        <div class="formBlc">
+                            <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                                <label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="dateCotis">Cotisation payée le :</label>
+                            </div>
+                            <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <input id="dateCotis" name="dateCotis" type="date" class="form-control" placeholder="jj/mm/aaaa" />
+                            </div>
+                            <div class="hidden-xs hidden-sm col-md-6 col-lg-6">
+                                <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="montantCotis">Montant de la cotisation :</label>
+                            </div>
+                            <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <input id="montantCotis" name="montantCotis" placeholder="29,99" type="number" class="form-control " />
+                                <span class="input-group-addon">€</span>
+                            </div>
+                            <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6 center-block champDonnees">
+                                <span> <h2 class="h2label"> Fin de l'abonnement : </h2>  23/05/2016 </span>
+                            </div>
+                            <div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6 center-block champDonnees">
+                                <span> <h2 class="h2label"> Nombre de médias possédés : </h2> 12 </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-offset-3 cod-sm-6 cod-xs-6">
+                        <input type="submit" class="btn btn-default" value="Ajouter" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</div>
+<div>
+    <footer>
+        <div>
+            <h3>
+                Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a>
+            </h3>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
