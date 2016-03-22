@@ -1,13 +1,25 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Adresse {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
+	
 	private String numRue;
 	private String nomRue;
 	private int cpVille;
 	private String ville;
 	private String pays;
+	
+	@OneToMany(mappedBy = "adresse")
+	private Adherent adherent;
 	
 	public Adresse() {
 		
@@ -19,6 +31,13 @@ public class Adresse {
 		this.cpVille = cpVille;
 		this.ville = ville;
 		this.pays = pays;
+	}
+
+	/**
+	 * Affichage client
+	 */
+	public String toString() {
+		return "Adresse (id =" + getId() + "," + getNumRue() + "," + getNomRue() + "," + getCpVille() + "," + getCpVille() + ")";
 	}
 
 	// Getters & Setters

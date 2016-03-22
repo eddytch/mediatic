@@ -2,16 +2,30 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+@Entity
 public class Adherent {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
+	
 	private String nom;
 	private String prenom;
 	private String email;
 	private Date dateNce;
 	private Date datePaiement;
-	private Date dateFinCotisation; // A voir le client si on garde 
 	private double montant;
+	@Transient
+	private Date dateFinCotisation; // A voir le client si on garde 
+	
+	@ManyToOne
+	private Adresse adresse;
 	
 	public Adherent() {
 		
@@ -23,8 +37,15 @@ public class Adherent {
 		this.email = email;
 		this.dateNce = dateNce;
 		this.datePaiement = datePaiement;
-		this.dateFinCotisation = dateFinCotisation;
 		this.montant = montant;
+		this.dateFinCotisation = dateFinCotisation;
+	}
+
+	/**
+	 * Affichage client
+	 */
+	public String toString() {
+		return "Adherent (id =" + getId() + "," + getNom() + "," + getPrenom() + ")";
 	}
 
 	// Getters & Setters
