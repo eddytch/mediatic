@@ -17,6 +17,9 @@ public class Media {
     @Enumerated(EnumType.STRING)
     private Type type ;
 
+    @ManyToOne
+    private Auteur auteurMedia ;
+
     public enum Type {Livre,CD,DVD}
 
     public Media(){
@@ -43,5 +46,13 @@ public class Media {
 
     public void setTitre(String titre) {
         this.titre = titre;
+    }
+
+    public Auteur getAuteurMedia() {
+        return auteurMedia;
+    }
+
+    public void setAuteurMedia(Auteur auteurMedia) {
+        this.auteurMedia = auteurMedia;
     }
 }
