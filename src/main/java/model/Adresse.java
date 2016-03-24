@@ -46,7 +46,7 @@ public class Adresse {
 	 * Affichage client
 	 */
 	public String toString() {
-		return "Adresse (id =" + getId() + "," + getNumRue() + "," + getNomRue() + "," + getCpVille() + "," + getCpVille() + ")";
+		return "Adresse (id =" + getId() + "," + getNumRue() + "," + getNomRue() + "," + getCpVille() + "," + getVille() + "," + getPays() + ")";
 	}
 
 	// Getters & Setters

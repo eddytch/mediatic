@@ -39,6 +39,13 @@ public class Emprunt {
 		this.mediaLoue = mediaLoue;
 		this.loueur = loueur;
 	}
+
+	/**
+	 * Affichage client
+	 */
+	public String toString() {
+		return "Emprunt (id =" + getId() + "," + getDateEmprunt() + "," + getMediaLoue() + "," + getLoueur()  + ")";
+	}
 	
 	private long jourEnMS(int jour) {
 		return jour * 86400000;// 24*60*60*1000

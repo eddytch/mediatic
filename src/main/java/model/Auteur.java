@@ -36,6 +36,30 @@ public class Auteur{
         this.prenom = prenom;
     }
 
+	/**
+	 * Affichage client
+	 */
+	public String toString() {
+		return "Auteur (id =" + getId() + "," + getNom() + "," + getPrenom() + "," + getListeMedias()  + ")";
+	}
+
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Auteur auteur = (Auteur) o;
+
+        return id == auteur.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
+
+
     public String getNom() {
         return nom;
     }
@@ -60,19 +84,11 @@ public class Auteur{
         this.listeMedias = listeMedias;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public long getId() {
+		return id;
+	}
 
-        Auteur auteur = (Auteur) o;
-
-        return id == auteur.id;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 }

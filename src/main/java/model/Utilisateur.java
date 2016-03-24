@@ -23,6 +23,13 @@ public class Utilisateur {
 		this.login = login;
 		this.mdp = mdp;
 	}
+
+	/**
+	 * Affichage client
+	 */
+	public String toString() {
+		return "User (id =" + getId() + "," + getLogin() + "," + getMdp()  + ")";
+	}
 	
 	public Long getId(){
 		return id;

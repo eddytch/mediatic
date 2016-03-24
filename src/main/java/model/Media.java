@@ -44,6 +44,13 @@ public class Media {
         this.type = type;
     }
 
+	/**
+	 * Affichage client
+	 */
+	public String toString() {
+		return "Media (id =" + getId() + "," + getTitre() + "," + getType() + "," + getAuteurMedia()  + ")";
+	}
+
 
     public Type getType() {
         return type;
