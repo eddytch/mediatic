@@ -14,9 +14,9 @@
 
 
 <!-- TODO check url/user/passxord -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://formation.iocean.fr:5432/formation9"/>
-			<property name="javax.persistence.jdbc.user" value="formation9" />
-			<property name="javax.persistence.jdbc.password" value="formationSQL" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mediatic"/>
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="postgres" />
 			
 			<property name="hibernate.hikari.minimumIdle" value="5" />
 			<property name="hibernate.hikari.maximumPoolSize" value="10" />
