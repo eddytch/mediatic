@@ -2,13 +2,18 @@ package model;
 
 import javax.persistence.*;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+@Entity
 public class Utilisateur {
 	
     @Id
     @GeneratedValue
 	private Long id;
+	@NotEmpty
 	private String login;
-	private String mdp;// TODO chiffrement
+	@NotEmpty
+	private String mdp;
 	
 	public Utilisateur(){
 		

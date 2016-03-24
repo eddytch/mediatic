@@ -7,17 +7,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Adresse {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
+	@NotEmpty
 	private String numRue;
+	@NotEmpty
 	private String nomRue;
-	private int cpVille;
+	@NotEmpty
+	private String cpVille;
+	@NotEmpty
 	private String ville;
+	@NotEmpty
 	private String pays;
 	
 	@OneToMany(mappedBy = "adresse")
@@ -27,7 +34,7 @@ public class Adresse {
 		
 	}
 
-	public Adresse(String numRue, String nomRue, int cpVille, String ville, String pays) {
+	public Adresse(String numRue, String nomRue, String cpVille, String ville, String pays) {
 		this.numRue = numRue;
 		this.nomRue = nomRue;
 		this.cpVille = cpVille;
@@ -67,11 +74,11 @@ public class Adresse {
 		this.nomRue = nomRue;
 	}
 
-	public int getCpVille() {
+	public String getCpVille() {
 		return cpVille;
 	}
 
-	public void setCpVille(int cpVille) {
+	public void setCpVille(String cpVille) {
 		this.cpVille = cpVille;
 	}
 

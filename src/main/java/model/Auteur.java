@@ -1,11 +1,16 @@
 package model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.List;
 
+@Entity
 public class Auteur{
 
     @Id
@@ -13,6 +18,7 @@ public class Auteur{
     private long id ;
 
     @Column
+	@NotEmpty
     private String nom ;
 
     @Column

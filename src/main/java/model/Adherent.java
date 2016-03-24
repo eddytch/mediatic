@@ -1,12 +1,16 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Adherent {
@@ -15,9 +19,13 @@ public class Adherent {
 	@GeneratedValue
 	private Long id;
 	
+	@NotEmpty
 	private String nom;
+	@NotEmpty
 	private String prenom;
+	@NotEmpty
 	private String email;
+	@NotEmpty
 	private Date dateNce;
 	private Date datePaiement;
 	private double montant;
@@ -26,6 +34,9 @@ public class Adherent {
 	
 	@ManyToOne
 	private Adresse adresse;
+	
+	@OneToMany(mappedBy = "loueur")
+	private List<Emprunt> adherentEmprunteur;
 	
 	public Adherent() {
 		
@@ -111,6 +122,22 @@ public class Adherent {
 
 	public void setMontant(double montant) {
 		this.montant = montant;
+	}
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+	public List<Emprunt> getAdherentEmprunteur() {
+		return adherentEmprunteur;
+	}
+
+	public void setAdherentEmprunteur(List<Emprunt> adherentEmprunteur) {
+		this.adherentEmprunteur = adherentEmprunteur;
 	}
 	// Fin Getters & Setters
 

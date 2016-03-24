@@ -2,9 +2,17 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Emprunt {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
 	
 	private Date dateEmprunt;
 	
@@ -13,12 +21,6 @@ public class Emprunt {
 	
 	@ManyToOne
 	private Adherent loueur;
-
-//	@OneTOMany(mappedBy = "mediaLoue")
-//	private List<Emprunt> mediaEmprunte;
-	
-//	@OneTOMany(mappedBy = "loueur")
-//	private List<Emprunt> adherentEmprunteur;
 	
 	public Emprunt(){
 		
@@ -36,5 +38,21 @@ public class Emprunt {
 
 	public void setDateEmprunt(Date dateEmprunt) {
 		this.dateEmprunt = dateEmprunt;
+	}
+
+	public Media getMediaLoue() {
+		return mediaLoue;
+	}
+
+	public void setMediaLoue(Media mediaLoue) {
+		this.mediaLoue = mediaLoue;
+	}
+
+	public Adherent getLoueur() {
+		return loueur;
+	}
+
+	public void setLoueur(Adherent loueur) {
+		this.loueur = loueur;
 	}
 }
