@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Emprunt {
@@ -14,6 +15,7 @@ public class Emprunt {
 	@GeneratedValue
 	private Long id;
 	
+	@NotNull
 	private Date dateEmprunt;
 	
 	@ManyToOne
@@ -22,13 +24,14 @@ public class Emprunt {
 	@ManyToOne
 	private Adherent loueur;
 	
-	public Emprunt(){
-		
+	public Emprunt(Date dateEmprunt, Media mediaLoue, Adherent loueur) {
+		this.dateEmprunt = dateEmprunt;
+		this.mediaLoue = mediaLoue;
+		this.loueur = loueur;
 	}
 
-	public Emprunt(Date dateEmprunt) {
-		super();
-		this.dateEmprunt = dateEmprunt;
+	public Emprunt(){
+		
 	}
 
 	public Date getDateEmprunt() {

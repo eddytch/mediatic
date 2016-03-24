@@ -28,7 +28,7 @@ public class Media {
     private Type type ;
 
 	@NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Auteur auteurMedia ;
 
 	@OneToMany(mappedBy = "mediaLoue")
@@ -38,8 +38,9 @@ public class Media {
 
     }
 
-    public Media(String titre, Type type) {
+    public Media(String titre, Auteur auteurMedia, Type type) {
         this.titre = titre;
+        this.auteurMedia = auteurMedia;
         this.type = type;
     }
 

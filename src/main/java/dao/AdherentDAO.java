@@ -6,7 +6,7 @@ public class AdherentDAO extends GenericDAO<Adherent> {
 	
 	private static AdherentDAO adherentDAO;
 	
-	private AdherentDAO() {
+	public AdherentDAO() {
 		super(Adherent.class);
 	}
 	

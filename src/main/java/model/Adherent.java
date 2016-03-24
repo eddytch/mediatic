@@ -3,6 +3,7 @@ package model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -32,9 +33,9 @@ public class Adherent {
 	private Date datePaiement;
 	private double montant;
 	@Transient
-	private Date dateFinCotisation; // A voir le client si on garde 
+	private Date dateFinCotisation; 
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Adresse adresse;
 	
 	@OneToMany(mappedBy = "loueur")
@@ -44,11 +45,19 @@ public class Adherent {
 		
 	}
 
-	public Adherent(String nom, String prenom, String email, Date dateNce, Date datePaiement, Date dateFinCotisation, double montant) {
+	public Adherent(String nom, String prenom, String email, Date dateNce) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.dateNce = dateNce;
+	}
+
+	public Adherent(String nom, String prenom, String email, Date dateNce, Adresse adresse, Date datePaiement, Date dateFinCotisation, double montant) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.dateNce = dateNce;
+		this.adresse = adresse;
 		this.datePaiement = datePaiement;
 		this.montant = montant;
 		this.dateFinCotisation = dateFinCotisation;
