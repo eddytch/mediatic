@@ -47,10 +47,6 @@ public class Emprunt {
 		return "Emprunt (id =" + getId() + "," + getDateEmprunt() + "," + getMediaLoue() + "," + getLoueur()  + ")";
 	}
 	
-	private long jourEnMS(int jour) {
-		return jour * 86400000;// 24*60*60*1000
-	}
-
 	public Date getDateEmprunt() {
 		return dateEmprunt;
 	}
@@ -95,22 +91,25 @@ public class Emprunt {
 	
 	
 
+	@SuppressWarnings("deprecation")
 	public void setDateFinLocation() {
 		if (this.getDateEmprunt() != null) {
 
-			long finLoc = this.getDateEmprunt().getTime();
+			int year = this.getDateEmprunt().getYear();
+			int month = this.getDateEmprunt().getMonth();
+			int day = this.getDateEmprunt().getDay();
 
 			switch (this.mediaLoue.getType()) {
 			case Livre:
-				finLoc += jourEnMS(30);
+				day += 30;
 				break;
 			case CD:
 			case DVD:
 			default:
-				finLoc += jourEnMS(15);
+				day += 15;
 				break;
 			}
-			this.dateFinLocation = new Date(finLoc);
+			this.dateFinLocation = new Date(year, month, day);
 		} else {
 			this.dateFinLocation = null;
 		}

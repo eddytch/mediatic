@@ -61,4 +61,12 @@ public class AdherentDAO extends GenericDAO<Adherent> {
         // On recupere la liste des adherents
         return uneReq.getResultList() ;
     }
+	
+	@Override
+	public Adherent find(Long id) {
+		Adherent a = super.find(id);
+		a.setAge();
+		a.setDateFinCotisation();
+		return a;
+	}
 }

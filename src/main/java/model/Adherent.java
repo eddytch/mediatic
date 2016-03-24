@@ -32,13 +32,13 @@ public class Adherent {
 	private Date dateNce;
 	
 	@Transient
-	private String age;//
+	private String age;
 
 	private Date datePaiement;
 	private double montant;
 	
 	@Transient
-	private Date dateFinCotisation;// 
+	private Date dateFinCotisation;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Adresse adresse;
@@ -57,7 +57,7 @@ public class Adherent {
 		this.dateNce = dateNce;
 	}
 
-	public Adherent(String nom, String prenom, String email, Date dateNce, Adresse adresse, Date datePaiement, Date dateFinCotisation, double montant) {
+	public Adherent(String nom, String prenom, String email, Date dateNce, Adresse adresse, Date datePaiement, double montant) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
@@ -65,7 +65,6 @@ public class Adherent {
 		this.adresse = adresse;
 		this.datePaiement = datePaiement;
 		this.montant = montant;
-		this.dateFinCotisation = dateFinCotisation;
 	}
 
 	/**
@@ -127,9 +126,19 @@ public class Adherent {
 	public Date getDateFinCotisation() {
 		return dateFinCotisation;
 	}
-
-	public void setDateFinCotisation(Date dateFinCotisation) {
-		this.dateFinCotisation = dateFinCotisation;
+	
+	
+	@SuppressWarnings("deprecation")
+	public void setDateFinCotisation() {
+		
+		if (this.getDatePaiement() != null) {
+			int year = 1+ this.getDatePaiement().getYear();
+			int month =  this.getDatePaiement().getMonth();
+			int day =  this.getDatePaiement().getDay();
+			this.dateFinCotisation = new Date(year, month, day);
+		} else {
+			this.dateFinCotisation = null;
+		}
 	}
 
 	public double getMontant() {
@@ -160,8 +169,9 @@ public class Adherent {
 		return age;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
+	public void setAge() {
+		
+		this.age= "xx ans";
 	}
 	
 	// Fin Getters & Setters
