@@ -16,4 +16,11 @@ public class EmpruntDAO extends GenericDAO<Emprunt> {
 		}
 		return dao;
 	}
+	
+	@Override
+	public Emprunt find(Long id) {
+		Emprunt e = super.find(id);
+		e.setDateFinLocation();
+		return e;
+	}
 }

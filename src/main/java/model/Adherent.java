@@ -30,10 +30,15 @@ public class Adherent {
 
 	@NotNull
 	private Date dateNce;
+	
+	@Transient
+	private String age;//
+
 	private Date datePaiement;
 	private double montant;
+	
 	@Transient
-	private Date dateFinCotisation; 
+	private Date dateFinCotisation;// 
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Adresse adresse;
@@ -150,6 +155,16 @@ public class Adherent {
 	public void setAdherentEmprunteur(List<Emprunt> adherentEmprunteur) {
 		this.adherentEmprunteur = adherentEmprunteur;
 	}
+	
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+	
 	// Fin Getters & Setters
 
 }
+

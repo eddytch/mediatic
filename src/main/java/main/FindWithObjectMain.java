@@ -29,7 +29,7 @@ public class FindWithObjectMain {
         auteur.setPrenom("Guetta");
         List<Auteur> auteurs = AuteurDAO.instance().findWithObject(auteur) ;
         for (Auteur unAuteur : auteurs) {
-            System.out.println("unAuteur = " + auteur);
+            System.out.println("unAuteur = " + unAuteur);
         }
 
         Media media = new Media() ;
