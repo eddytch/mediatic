@@ -3,6 +3,7 @@ package model;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -22,11 +23,11 @@ public class Media {
 	@NotEmpty
     private String titre ;
 
-	@NotEmpty
+	@NotNull
     @Enumerated(EnumType.STRING)
     private Type type ;
 
-	@NotEmpty
+	@NotNull
     @ManyToOne
     private Auteur auteurMedia ;
 

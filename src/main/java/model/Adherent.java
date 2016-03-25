@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -25,7 +26,8 @@ public class Adherent {
 	private String prenom;
 	@NotEmpty
 	private String email;
-	@NotEmpty
+
+	@NotNull
 	private Date dateNce;
 	private Date datePaiement;
 	private double montant;
