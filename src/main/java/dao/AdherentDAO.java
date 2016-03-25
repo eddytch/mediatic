@@ -30,13 +30,13 @@ public class AdherentDAO extends GenericDAO<Adherent> {
         // Dans la suite on ajoute dans les if ce qu'on doit ajoute à la requete SQL pour filtrer sur un champ precis
         // Si l adhrent contient un nom
         if (adherent.getNom() != null)
-            req += (" adr.nom = :nom AND");
+            req += (" adh.nom = :nom AND");
         // Si l adherent contient un prenom
         if (adherent.getPrenom() != null)
-            req += (" adr.prenom =:prenom AND") ;
+            req += (" adh.prenom = :prenom AND") ;
         // Si l adherent contient un email
         if (adherent.getEmail() != null)
-            req +=(" adr.email = :email AND") ;
+            req +=(" adh.email = :email AND") ;
 
         // On construit la chaine de la requete
         req = buildRequest(req) ;
