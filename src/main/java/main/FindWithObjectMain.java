@@ -1,8 +1,10 @@
 package main;
 
+import dao.AdherentDAO;
 import dao.AdresseDAO;
 import dao.AuteurDAO;
 import dao.MediaDAO;
+import model.Adherent;
 import model.Adresse;
 import model.Auteur;
 import model.Media;
@@ -29,7 +31,7 @@ public class FindWithObjectMain {
         auteur.setPrenom("Guetta");
         List<Auteur> auteurs = AuteurDAO.instance().findWithObject(auteur) ;
         for (Auteur unAuteur : auteurs) {
-            System.out.println("unAuteur = " + auteur);
+            System.out.println("unAuteur = " + unAuteur);
         }
 
         Media media = new Media() ;
@@ -38,5 +40,9 @@ public class FindWithObjectMain {
         for (Media unMedia : medias) {
             System.out.println("unMedia = " + unMedia);
         }
+
+        Adherent adh = new Adherent() ;
+        adh.setPrenom("Dimitri");
+        AdherentDAO.instance().findWithObject(adh) ;
     }
 }
