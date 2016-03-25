@@ -1,10 +1,11 @@
 package dao;
 
-import model.Adresse;
+import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import java.util.List;
+import javax.persistence.TypedQuery;
+
+import model.Adresse;
 
 public class AdresseDAO extends GenericDAO<Adresse> {
 	
@@ -47,7 +48,7 @@ public class AdresseDAO extends GenericDAO<Adresse> {
         // On construit la requete
         req = buildRequest(req) ;
 
-        Query uneReq = entityManager.createQuery(req) ;
+        TypedQuery<Adresse> uneReq = entityManager.createQuery(req,Adresse.class) ;
 
         /*
          * Dans la suite dans les if, on ajoute la valeur des parametres correspondant à la valeur du champ de l'objet

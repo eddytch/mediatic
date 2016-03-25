@@ -1,10 +1,11 @@
 package dao;
 
-import model.Auteur;
+import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import java.util.List;
+import javax.persistence.TypedQuery;
+
+import model.Auteur;
 
 /**
  * Created by utilisateur on 23/03/2016.
@@ -42,7 +43,7 @@ public class AuteurDAO extends GenericDAO<Auteur> {
         req = buildRequest(req) ;
 
         // On cree la requete
-        Query uneReq = entityManager.createQuery(req) ;
+        TypedQuery<Auteur> uneReq = entityManager.createQuery(req,Auteur.class) ;
 
         //Dans la suite on ajoute les parametres de la requete
         // Si l'auteur contient un nom

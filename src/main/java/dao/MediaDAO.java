@@ -1,12 +1,13 @@
 package dao;
 
-import model.Auteur;
-import model.Media;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import model.Auteur;
+import model.Media;
 
 /**
  * Created by utilisateur on 23/03/2016.
@@ -53,7 +54,7 @@ public class MediaDAO extends GenericDAO<Media> {
 
         System.out.println("req = " + req);
         //On cree la requete
-        Query uneReq = entityManager.createQuery(req) ;
+        TypedQuery<Media> uneReq = entityManager.createQuery(req,Media.class) ;
 
         //Si le media contient un titre on filtre avec le titre dans la requete
         if (media.getTitre() != null) {
@@ -65,6 +66,7 @@ public class MediaDAO extends GenericDAO<Media> {
         }
 
         // On requete la liste des medias avec la requetes
+        
         List<Media> listeMedias = uneReq.getResultList();
         //Si l'objet media contient un auteur
         if(media.getAuteurMedia() != null) {

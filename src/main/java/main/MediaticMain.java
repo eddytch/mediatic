@@ -1,22 +1,29 @@
 package main;
 
 
-import dao.*;
-import model.*;
-import model.Media.Type;
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
+
+import dao.AdherentDAO;
+import dao.EmpruntDAO;
+import dao.MediaDAO;
+import dao.UtilisateurDAO;
+import model.Adherent;
+import model.Adresse;
+import model.Auteur;
+import model.Emprunt;
+import model.Media;
+import model.Media.Type;
+import model.Utilisateur;
 
 /**
  * Created by utilisateur on 22/03/2016.
  */
 public class MediaticMain {
 
-    public static void main(String[] args) {
+    @SuppressWarnings("deprecation")
+	public static void main(String[] args) {
 
         // Création List Adhérent & Adresse
     	AdherentDAO adherentDAO = new AdherentDAO();
