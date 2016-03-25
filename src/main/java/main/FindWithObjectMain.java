@@ -43,6 +43,9 @@ public class FindWithObjectMain {
 
         Adherent adh = new Adherent() ;
         adh.setPrenom("Dimitri");
-        AdherentDAO.instance().findWithObject(adh) ;
+        List<Adherent> adherents = AdherentDAO.instance().findWithObject(adh) ;
+        for (Adherent adherent : adherents ){
+            System.out.println(adherent);
+        }
     }
 }
