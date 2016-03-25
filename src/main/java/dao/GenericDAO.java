@@ -10,6 +10,8 @@ public class GenericDAO<T> {
         this.klass = klass;
     }
 
+    public String debutReq = "FROM" ;
+
     public T find(Long id) {
         EntityManager entityManager = DatabaseHelper.createEntityManager();
         T t = entityManager.find(klass, id);
@@ -40,4 +42,20 @@ public class GenericDAO<T> {
         DatabaseHelper.commitTxAndClose(entityManager);
     }
 
+    public String buildRequest(String req){
+        //Si la requete après le WHERE n'est pas vide on ajoute un WHERE au début de la requete
+        if(!req.equals("")){
+            req = (debutReq+" WHERE "+req) ;
+        }
+        //Sinon on ajoute rien
+        else{
+            req = debutReq ;
+        }
+        // Si la requete finit par AND
+        if(req.endsWith("AND"))
+            // On enleve le AND a la fin de la requete
+            req = req.substring(0,req.length()-3) ;
+
+        return req ;
+    }
 }

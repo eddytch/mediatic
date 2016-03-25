@@ -2,6 +2,8 @@ package dao;
 
 import model.Adherent;
 
+import java.util.List;
+
 public class AdherentDAO extends GenericDAO<Adherent> {
 	
 	private static AdherentDAO adherentDAO;
@@ -16,5 +18,4 @@ public class AdherentDAO extends GenericDAO<Adherent> {
 		}
 		return adherentDAO;
 	}
-
 }

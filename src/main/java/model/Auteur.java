@@ -59,4 +59,20 @@ public class Auteur{
     public void setListeMedias(List<Media> listeMedias) {
         this.listeMedias = listeMedias;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Auteur auteur = (Auteur) o;
+
+        return id == auteur.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
 }
