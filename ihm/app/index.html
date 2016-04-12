@@ -18,6 +18,8 @@
 <!-- Chargement des librairies de l'application -->
 <script src="app.js"></script>
 
+<script src="module-global/controller/TopController.js"></script>
+
 <script src="module-menu/js/menu.js"></script>
 <script src="module-menu/js/controller/MenuController.js"></script>
 
@@ -25,13 +27,12 @@
 <script src="module-media/js/controller/MediaController.js"></script>
 <script src="module-media/js/service/MediaService.js"></script>
 
+<script src="module-login/js/controller/LoginController.js"></script>
+<script src="module-login/js/service/LoginService.js"></script>
+
 <!-- Chargement de BOOTSTRAP-->
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<link
-	href="bower_components/bootstrap/dist/css/bootstrap.css"
-	rel="stylesheet"
-	type="text/css"
-/>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
 <!-- Chargement des STYLES propre à l'application -->
 <link
@@ -46,13 +47,14 @@
 <!-- Celui ci doit être défini ailleurs, dans les controllers par exemple. -->
 <title ng-bind="page.titre"></title>
 </head>
-<body>
+<body ng-controller="TopController as topCtrl">
 	<!-- Header de la page  -->
 	<header>
 		<div class="page-header">
 			<h1>DTA-Ingénierie</h1>
 		</div>
 	</header>
+<<<<<<< Updated upstream
 
 	<!-- Insertion du menu -->
 	<div ng-include="'module-menu/templates/menu.html'"></div>
@@ -69,6 +71,32 @@
 
 	<!-- Zone visée par ngRoute-->
 	<ng-view></ng-view>
+=======
+	
+	<!-- Lorsqu'on est connectée -->
+	<div ng-if="!topCtrl.isConnected()">
+		<div ng-include="'module-login/templates/login.html'"></div>
+	</div>
+	
+	<!-- Lorsqu'on est pas connecté -->
+	<div ng-if="topCtrl.isConnected()">
+		<!-- Insertion du menu -->
+		<div ng-include="'module-menu/templates/menu.html'"></div>
+			
+		<!-- Contenu de la page -->
+		<div>
+			<section>
+				<article>
+					<h1>Bienvenue à la Bibliothèque DTA-Ingénierie</h1>
+					<h2>Toute l'équipe vous souhaite la bienvenue !!!</h2>
+				</article>
+			</section>
+		</div>	
+		
+		<!-- Zone visée par ngRoute-->
+		<ng-view></ng-view>
+	</div>
+>>>>>>> Stashed changes
 
 	<!-- Footer -->
 	<div>
