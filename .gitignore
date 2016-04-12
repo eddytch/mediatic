@@ -4,3 +4,5 @@
 .settings/
 .idea/
 bin/
+ihm/node_modules
+ihm/app/bower_components
