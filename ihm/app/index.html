@@ -1,6 +1,4 @@
 <!doctype html>
-
-<!-- Déclaration du module principal de l'application-->
 <html ng-app="ModuleApp">
 <head>
 <meta charset="utf-8" />
@@ -22,10 +20,18 @@
 
 <!-- Chargement de BOOTSTRAP-->
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link
+	href="bower_components/bootstrap/dist/css/bootstrap.css"
+	rel="stylesheet"
+	type="text/css"
+/>
 
-<!-- Chargement des STYLES propre à l'application --> 
-<link rel="stylesheet" type="text/css" href="css/index.css" />
+<!-- Chargement des STYLES propre à l'application -->
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="css/index.css"
+/>
 
 
 <!-- Dès la déclaration de l'application, $rootScope est défini. -->
@@ -40,10 +46,10 @@
 			<h1>DTA-Ingénierie</h1>
 		</div>
 	</header>
-	
+
 	<!-- Insertion du menu -->
 	<div ng-include="'module-menu/templates/menu.html'"></div>
-		
+
 	<!-- Contenu de la page -->
 	<div>
 		<section>
@@ -52,19 +58,20 @@
 				<h2>Toute l'équipe vous souhaite la bienvenue !!!</h2>
 			</article>
 		</section>
-	</div>	
-	
+	</div>
+
 	<!-- Zone visée par ngRoute-->
 	<ng-view></ng-view>
-	
+
 	<!-- Footer -->
 	<div>
 		<footer>
 			<div>
-				<h3>Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a></h3>
+				<h3>
+					Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a>
+				</h3>
 			</div>
 		</footer>
 	</div>
-	
 </body>
 </html>

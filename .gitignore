@@ -6,3 +6,5 @@
 bin/
 ihm/node_modules
 ihm/app/bower_components
+npm-debug.log
+ihm/npm-debug.log
