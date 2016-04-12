@@ -1,1 +1,2 @@
-angular.module('ModuleApp', ['ModuleGlobal', 'ModuleMedia', 'ModuleAdherent','ngRoute']);
+angular.module('ModuleApp', ['ngRoute', 'ModuleMenu']);
+//'ModuleGlobal', 'ModuleMedia', 'ModuleAdherent','ngRoute'

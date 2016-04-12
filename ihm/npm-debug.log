@@ -1,0 +1,118 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.1
+4 verbose readDependencies loading dependencies from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\package.json
+5 verbose install where, deps [ 'C:\\Users\\utilisateur\\workspace\\ProjetFilRouge\\mediatic\\ihm',
+5 verbose install   [ 'bower',
+5 verbose install     'http-server',
+5 verbose install     'jasmine-core',
+5 verbose install     'karma',
+5 verbose install     'karma-chrome-launcher',
+5 verbose install     'karma-firefox-launcher',
+5 verbose install     'karma-jasmine',
+5 verbose install     'karma-junit-reporter',
+5 verbose install     'protractor',
+5 verbose install     'shelljs' ] ]
+6 verbose install where, peers [ 'C:\\Users\\utilisateur\\workspace\\ProjetFilRouge\\mediatic\\ihm',
+6 verbose install   [] ]
+7 verbose installManyTop reading for lifecycle C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\package.json
+8 info preinstall angular-seed@0.0.0
+9 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\bower\package.json
+10 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\http-server\package.json
+11 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\jasmine-core\package.json
+12 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma\package.json
+13 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-chrome-launcher\package.json
+14 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-firefox-launcher\package.json
+15 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-jasmine\package.json
+16 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-junit-reporter\package.json
+17 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\protractor\package.json
+18 verbose installManyTop reading scoped package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\shelljs\package.json
+19 info package.json shelljs@0.2.6 No license field.
+20 verbose readDependencies loading dependencies from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\package.json
+21 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\bower\package.json
+22 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\http-server\package.json
+23 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\jasmine-core\package.json
+24 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma\package.json
+25 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-chrome-launcher\package.json
+26 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-firefox-launcher\package.json
+27 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-jasmine\package.json
+28 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\karma-junit-reporter\package.json
+29 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\protractor\package.json
+30 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\shelljs\package.json
+31 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\bower\package.json
+32 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\bower.cmd\package.json
+33 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\hs\package.json
+34 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\hs.cmd\package.json
+35 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\http-server\package.json
+36 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\http-server.cmd\package.json
+37 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\karma\package.json
+38 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\karma.cmd\package.json
+39 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\protractor\package.json
+40 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\protractor.cmd\package.json
+41 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\shjs\package.json
+42 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\shjs.cmd\package.json
+43 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\webdriver-manager\package.json
+44 verbose targetResolver reading package data from C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm\node_modules\.bin\webdriver-manager.cmd\package.json
+45 verbose already installed skipping karma-chrome-launcher@^0.1.12 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+46 verbose already installed skipping karma-firefox-launcher@^0.1.6 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+47 verbose already installed skipping karma-jasmine@^0.3.5 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+48 verbose already installed skipping karma-junit-reporter@^0.2.2 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+49 verbose already installed skipping protractor@^2.1.0 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+50 verbose already installed skipping shelljs@^0.2.6 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+51 verbose already installed skipping bower@^1.3.1 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+52 verbose already installed skipping http-server@^0.9.0 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+53 verbose already installed skipping jasmine-core@^2.3.4 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+54 verbose already installed skipping karma@~0.12 C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+55 silly install resolved []
+56 info build C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+57 info linkStuff angular-seed@0.0.0
+58 silly linkStuff angular-seed@0.0.0 has C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic as its parent node_modules
+59 verbose linkBins angular-seed@0.0.0
+60 verbose linkMans angular-seed@0.0.0
+61 verbose rebuildBundles angular-seed@0.0.0
+62 verbose rebuildBundles [ '.bin',
+62 verbose rebuildBundles   'bower',
+62 verbose rebuildBundles   'http-server',
+62 verbose rebuildBundles   'jasmine-core',
+62 verbose rebuildBundles   'karma',
+62 verbose rebuildBundles   'karma-chrome-launcher',
+62 verbose rebuildBundles   'karma-firefox-launcher',
+62 verbose rebuildBundles   'karma-jasmine',
+62 verbose rebuildBundles   'karma-junit-reporter',
+62 verbose rebuildBundles   'protractor',
+62 verbose rebuildBundles   'shelljs' ]
+63 info install angular-seed@0.0.0
+64 info postinstall angular-seed@0.0.0
+65 verbose unsafe-perm in lifecycle true
+66 info angular-seed@0.0.0 Failed to exec postinstall script
+67 verbose stack Error: angular-seed@0.0.0 postinstall: `bower install`
+67 verbose stack Exit status 1
+67 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
+67 verbose stack     at emitTwo (events.js:87:13)
+67 verbose stack     at EventEmitter.emit (events.js:172:7)
+67 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+67 verbose stack     at emitTwo (events.js:87:13)
+67 verbose stack     at ChildProcess.emit (events.js:172:7)
+67 verbose stack     at maybeClose (internal/child_process.js:821:16)
+67 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+68 verbose pkgid angular-seed@0.0.0
+69 verbose cwd C:\Users\utilisateur\workspace\ProjetFilRouge\mediatic\ihm
+70 error Windows_NT 10.0.10240
+71 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+72 error node v4.3.1
+73 error npm  v2.14.12
+74 error code ELIFECYCLE
+75 error angular-seed@0.0.0 postinstall: `bower install`
+75 error Exit status 1
+76 error Failed at the angular-seed@0.0.0 postinstall script 'bower install'.
+76 error This is most likely a problem with the angular-seed package,
+76 error not with npm itself.
+76 error Tell the author that this fails on your system:
+76 error     bower install
+76 error You can get their info via:
+76 error     npm owner ls angular-seed
+76 error There is likely additional logging output above.
+77 verbose exit [ 1, true ]
