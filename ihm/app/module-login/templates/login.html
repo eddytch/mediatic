@@ -4,7 +4,8 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<!-- Formulaire connexion -->
-			<form id="formLogin" class="form-horizontal" role="form">
+			<form name="myFormLogin" id="formLogin" class="form-horizontal" role="form"
+				  novalidate ng-submit="loginCtrl.getValidForm()">
 				<div>
 					<h2>Login</h2>
 				</div>
