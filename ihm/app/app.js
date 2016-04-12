@@ -1,0 +1,1 @@
+angular.module('ModuleApp', ['ModuleGlobal', 'ModuleMedia', 'ModuleAdherent','ngRoute']);
