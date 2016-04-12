@@ -1,10 +1,4 @@
-angular.module('ModuleGlobal').sevice('ServiceLogin', [ function() {
-	
+angular.module('ModuleGlobal').service('ServiceLogin', [ function() {
 	var self = this;
-	
-	
-	
-	
-	
 }]);
 	
