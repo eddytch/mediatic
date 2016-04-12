@@ -1,1 +1,1 @@
-angular.module("ModuleAdherent",['ngRoute','angularUtils.directives.dirPagination']) ;
+angular.module('Moduleadherent', ['ngRoute']);

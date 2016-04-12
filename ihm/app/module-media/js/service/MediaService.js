@@ -1,4 +1,5 @@
-angular.module('ModuleMedia').service('MediaService', ['$http','$sce', function($http, $sce) {
+angular.module('ModuleMedia').service('MediaService', ['$http', function($http) {
+
 		
 		var self = this;
 		var url = "http://10.34.10.140:8080/resource/media.recherche";
@@ -8,7 +9,6 @@ angular.module('ModuleMedia').service('MediaService', ['$http','$sce', function(
 			if (promise == undefined) {
 				promise = $http.get(url).then(function(response) {
 					return response.data;;
-
 				});
 			}
 		}
@@ -36,16 +36,5 @@ angular.module('ModuleMedia').service('MediaService', ['$http','$sce', function(
 				});
 				return 	list[index];
 			});			
-		}
-		
-		
-		// Ajout d'une commande
-		myCtrl.addProduit = function(id) {
-			console.warn('TODO ... ');
-		}
-		
-		// Fonction pour supprimer
-		myCtrl.editProduit = function(id) {
-			console.warn('TODO ... ');
 		}
 }]);

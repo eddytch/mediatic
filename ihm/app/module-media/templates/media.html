@@ -1,42 +1,49 @@
 <div class="container">
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Titre</th>
-				<th>Auteur</th>
-				<th>Type</th>
-				<th>Nom de l'emprunteur</th>
-				<th>Date de retour</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-show="mediaCtrl.medias==undefined">
-				<td colspan="4">
-					Chargement du catalogue en cours
-				</td>
-			</tr>
-			<tr ng-show="mediaCtrl.hasErrorProduits()">
-				<td colspan="4">
-					Erreur lors du chargement du catalogue
-				</td>
-			</tr>
-			<tr ng-repeat="media in mediaCtrl.medias">
-				<td ng-bind="media.id"></td>
-				<td ng-bind="media.titre"></td>
-				<td ng-bind="media.auteur"></td>
-				<td ng-bind="media.type"></td>
-				<td ng-bind="media.emprunteur"></td>
-				<td ng-bind="media.retour"></td>
-				<td>
-					<button type="button" class="btn btn-default" ng-click="catCtrl.showMedia(media.id)">
-						<span class="glyphicon glyphicon-zoom-in"></span>
-					</button>
-					<button type="button" class="btn btn-default" ng-click="catCtrl.editMedia(media.id)">
-						<span class="glyphicon glyphicon-plus"></span>
-					</button>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="responsive-table-line block-center" id="resultatRecherche">
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titre</th>
+					<th>Auteur</th>
+					<th>Type</th>
+					<th>Nom de l'emprunteur</th>
+					<th>Date de retour</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-show="mediaCtrl.medias==undefined">
+					<td colspan="7">Chargement du catalogue en cours</td>
+				</tr>
+				<tr ng-show="mediaCtrl.hasErrorProduits()">
+					<td colspan="7">Erreur lors du chargement du catalogue</td>
+				</tr>
+				<tr ng-repeat="media in mediaCtrl.medias">
+					<td ng-bind="media.id"></td>
+					<td ng-bind="media.titre"></td>
+					<td ng-bind="media.auteur"></td>
+
+					<td ng-if="media.type!='DVD'&&media.type=='CD'&&media.type=='Livre'" ng-bind="media.type"></td>
+					<td ng-if="media.type=='DVD'"><span class="glyphicon glyphicon-film"></span></td>
+					<td ng-if="media.type=='CD'"><span class="glyphicon glyphicon-cd" aria-hidden="true">CD</span></td>
+					<td ng-if="media.type=='Livre'"><span class="glyphicon glyphicon-book"></span></td>
+
+					<td ng-bind="mediaCtrl.getEmprunteur(media)"></td>
+					<td ng-bind="media.retour"></td>
+					<td>
+						<button type="button" class="btn btn-default" ng-click="catCtrl.louerMedia(media.id)">
+							<span class="glyphicon glyphicon-new-window"></span>
+						</button>
+						<button type="button" class="btn btn-default" ng-click="catCtrl.voirMedia(media.id)">
+							<span class="glyphicon glyphicon-zoom-in"></span>
+						</button>
+						<button type="button" class="btn btn-default" ng-click="catCtrl.editMedia(media.id)">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
