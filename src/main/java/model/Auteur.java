@@ -40,7 +40,7 @@ public class Auteur{
 	 * Affichage client
 	 */
 	public String toString() {
-		return "Auteur (id =" + getId() + "," + getNom() + "," + getPrenom() + "," + getListeMedias()  + ")";
+		return "Auteur (id =" + getId() + "," + getNom() + "," + getPrenom() + ")";
 	}
 
 	@Override
