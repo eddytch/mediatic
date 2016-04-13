@@ -1,13 +1,77 @@
 <!doctype html>
-
-<!-- Déclaration du module principal de l'application-->
 <html ng-app="ModuleApp">
 <head>
 <meta charset="utf-8" />
 
+<!-- Chargement des librairies javascript externes -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+
+<!-- Chargement des librairies javascript d'ANGULAR-JS -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-i18n/angular-locale_fr-fr.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<!-- Chargement des librairies de l'application -->
+<script src="app.js"></script>
+
+<script src="module-menu/js/menu.js"></script>
+<script src="module-menu/js/controller/MenuController.js"></script>
+
+<!-- Chargement de BOOTSTRAP-->
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<link
+	href="bower_components/bootstrap/dist/css/bootstrap.css"
+	rel="stylesheet"
+	type="text/css"
+/>
+
+<!-- Chargement des STYLES propre à l'application -->
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="css/index.css"
+/>
+
+
+<!-- Dès la déclaration de l'application, $rootScope est défini. -->
+<!-- On peut donc afficher un de ces attributs sans controller -->
+<!-- Celui ci doit être défini ailleurs, dans les controllers par exemple. -->
 <title ng-bind="page.titre"></title>
 </head>
 <body>
-<div>hello</div>
+	<!-- Header de la page  -->
+	<header>
+		<div class="page-header">
+			<h1>DTA-Ingénierie</h1>
+		</div>
+	</header>
+
+	<!-- Insertion du menu -->
+	<div ng-include="'module-menu/templates/menu.html'"></div>
+
+	<!-- Contenu de la page -->
+	<div>
+		<section>
+			<article>
+				<h1>Bienvenue à la Bibliothèque DTA-Ingénierie</h1>
+				<h2>Toute l'équipe vous souhaite la bienvenue !!!</h2>
+			</article>
+		</section>
+	</div>
+
+	<!-- Zone visée par ngRoute-->
+	<ng-view></ng-view>
+
+	<!-- Footer -->
+	<div>
+		<footer>
+			<div>
+				<h3>
+					Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ingénierie</a>
+				</h3>
+			</div>
+		</footer>
+	</div>
 </body>
 </html>

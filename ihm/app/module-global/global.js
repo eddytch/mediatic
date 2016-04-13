@@ -1,1 +1,0 @@
-angular.module('ModuleGlobal', ['ngRoute']);
