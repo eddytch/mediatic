@@ -1,1 +1,2 @@
-var moduleAdherent = angular.module("ModuleAdherent",[]) ;
+angular.module("ModuleAdherent",['ngRoute']) ;
+

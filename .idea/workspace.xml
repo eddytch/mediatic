@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39f02eca-27b9-4f9b-99d1-92c2bdae409b" name="Default" comment="Ajoute AdherentDao">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/adherent-controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/adherent-service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/css/adherent.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/css/global.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm/app/module-global/service/login.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ihm/app/module-adherent/adherent-controller.js" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/controller/adherent-controller.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ihm/app/module-adherent/adherent-service.js" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/service/adherent-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ihm/app/module-adherent/adherent.js" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/adherent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/MediaDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/MediaDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/FindWithObjectMain.java" afterPath="$PROJECT_DIR$/src/main/java/main/FindWithObjectMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html" afterPath="$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ihm/app/module-global/global.js" afterPath="$PROJECT_DIR$/ihm/app/module-global/global.js" />
     </list>
     <list id="0246f720-95f8-4a10-89c4-00a8d1d2eae3" name="Rejected commit: Default" comment="Ajoute AdherentDao" />
     <ignored path="mediatic.iws" />
@@ -49,16 +47,16 @@
         <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="55" selection-start-line="0" selection-start-column="55" selection-end-line="0" selection-end-column="55" />
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adherent-service.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent-service.js">
+      <file leaf-file-name="adherent-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/service/adherent-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3888889">
+            <state vertical-scroll-proportion="0.0">
               <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
               <folding />
             </state>
@@ -66,7 +64,7 @@
         </entry>
       </file>
       <file leaf-file-name="adherent-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent-controller.js">
+        <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/controller/adherent-controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
@@ -95,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rechercherAdherent.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rechercherAdherent.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.32399103">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -152,10 +150,10 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/MediaDAO.java" />
         <option value="$PROJECT_DIR$/maquette/angular/rechercherAdherent.html" />
         <option value="$PROJECT_DIR$/maquette/rechercherMedia.html" />
-        <option value="$PROJECT_DIR$/ihm/app/module-adherent/adherent.js" />
-        <option value="$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html" />
         <option value="$PROJECT_DIR$/ihm/app/module-adherent/adherent-controller.js" />
         <option value="$PROJECT_DIR$/ihm/app/module-adherent/adherent-service.js" />
+        <option value="$PROJECT_DIR$/ihm/app/module-adherent/adherent.js" />
+        <option value="$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html" />
       </list>
     </option>
   </component>
@@ -376,6 +374,84 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="module-adherent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediatic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediatic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ihm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module-adherent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediatic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediatic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ihm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module-adherent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediatic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mediatic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ihm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="bower_components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -574,6 +650,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\utilisateur\workspace\mediatic\mediatic\ihm\app\module-adherent\controller" />
+      <recent name="C:\Users\utilisateur\workspace\mediatic\mediatic\ihm\app\module-adherent\service" />
       <recent name="C:\Users\utilisateur\workspace\mediatic\mediatic\ihm\app\module-adherent\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -1037,7 +1115,7 @@
     <option name="totallyTimeSpent" value="71935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1435,23 +1513,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent.js">
+    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/service/adherent-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="55" selection-start-line="0" selection-start-column="55" selection-end-line="0" selection-end-column="55" />
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent-controller.js">
+    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/controller/adherent-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
@@ -1459,10 +1529,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent-service.js">
+    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/adherent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3888889">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ihm/app/module-adherent/templates/rechercherAdherent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32399103">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
       </provider>
