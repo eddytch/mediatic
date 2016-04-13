@@ -4,7 +4,18 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 
 	var myCtrl = this;
 	
+	$rootScope.page = $rootScope.page || {};
+	$rootScope.page.titre = "Media";
 	
+	
+	myCtrl.medias = undefined;
+	myCtrl.info = undefined;
+	
+	MediaService.getInfo().then(function(response){
+		myCtrl.info = response;
+	}, function(){
+		myCtrl.info = -1;
+	});
 	
 	var getMedia = function(params){
 		MediaService.getList(params).then(function(response){
@@ -14,31 +25,20 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 		});
 	}
 	getMedia({});
-	
-	
-	
-	$rootScope.page = $rootScope.page || {};
-	$rootScope.page.titre = "Media";
-	
-	myCtrl.medias = undefined;
-	
+		
 	myCtrl.submit = function(){
 		var params = {};
-		if( myCtrl.medias.select.page){
-			params.page = myCtrl.medias.select.page;
+		if (myCtrl.select) {
+			params = myCtrl.select;
 		}
-		if( myCtrl.medias.select.titre){
-			params.titre = myCtrl.medias.select.titre;
-		}
-		if( myCtrl.medias.select.auteur){
-			params.auteur = myCtrl.medias.select.auteur;
-		}
-		if( myCtrl.medias.select.type){
-			params.type = myCtrl.medias.select.type;
-		} 
+		console.log(params);
 		getMedia(params);
 	}
 	
+	myCtrl.goPage = function (page) {
+		myCtrl.select = {page: page};
+		myCtrl.submit();
+	}	
 
 	
 	myCtrl.hasErrorMedias = function(){

@@ -1,16 +1,16 @@
 <div class="container">
 	<div class="responsive-table-line block-center">
 		<div class="table ">
-			<form class="form-inline" ng-submit="mediaCtrl.submit()">
+			<form class="form-inline" ng-submit="mediaCtrl.submit()" noValidate>
 				<div class="form-group">
-					<input class="form-control" type="text" name="titre" ng-model="mediaCtrl.medias.select.titre" placeholder="Titre des medias" />
+					<input class="form-control" type="text" name="titre" ng-model="mediaCtrl.select.titre" placeholder="Titre des medias" />
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" name="auteur" ng-model="mediaCtrl.medias.select.auteur" placeholder="Auteur des medias" />
+					<input class="form-control" type="text" name="auteur" ng-model="mediaCtrl.select.auteur" placeholder="Auteur des medias" />
 				</div>
 				<div class="form-group">
-					<select class="form-control" name="type" ng-model="mediaCtrl.medias.select.type">
-						<option value="" disabled selected>Type des medias</option>
+					<select class="form-control" name="type" ng-model="mediaCtrl.select.type">
+						<option value="" selected>Type des medias</option>
 						<option>DVD</option>
 						<option>Livre</option>
 						<option>CD</option>
@@ -36,7 +36,10 @@
 			</thead>
 			<tbody>
 				<tr ng-show="mediaCtrl.medias==undefined">
-					<td colspan="7">Chargement du catalogue en cours</td>
+					<td colspan="7">Chargement des medias en cours</td>
+				</tr>
+				<tr ng-show="mediaCtrl.hasErrorProduits()">
+					<td colspan="7">Aucun media trouvé</td>
 				</tr>
 				<tr ng-repeat="media in mediaCtrl.medias">
 					<td ng-bind="media.id"></td>
@@ -46,13 +49,13 @@
 					<td ng-bind="media.emprunteur|NomPrenom"></td>
 					<td ng-bind="media.retour|DateFormat"></td>
 					<td>
-						<button type="button" class="btn btn-default" ng-click="catCtrl.louerMedia(media.id)">
+						<button type="button" class="btn btn-default" ng-click="mediaCtrl.louerMedia(media.id)">
 							<span class="glyphicon glyphicon-new-window"></span>
 						</button>
-						<button type="button" class="btn btn-default" ng-click="catCtrl.voirMedia(media.id)">
+						<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media.id)">
 							<span class="glyphicon glyphicon-zoom-in"></span>
 						</button>
-						<button type="button" class="btn btn-default" ng-click="catCtrl.editMedia(media.id)">
+						<button type="button" class="btn btn-default" ng-click="mediaCtrl.editMedia(media.id)">
 							<span class="glyphicon glyphicon-pencil"></span>
 						</button>
 					</td>
@@ -63,17 +66,30 @@
 	
 	<nav>
 		<ul class="pagination">
-			<li><a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-			</a></li>
-			<li ng-repeat="n in [1,2,3,4,5,6,7]"><span ng-bind="n"></a>
-			<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-			</a></li>
+			<li><a href="#/media"> <span>&laquo;</span></a></li>
+			<li ng-repeat="n in [] |for:mediaCtrl.info.pages">
+				<a href="#/media" ng-bind="n"  ng-click="mediaCtrl.goPage(n)"></a>
+<!-- 				<a href="#/media" ng-bind="n" ng-model="mediaCtrl.select.page" ng-click="mediaCtrl.goPage(n)"></a> -->
+			</li>
+			<li><a href="#/media"><span >&raquo;</span></a></li>
 		</ul>
 	</nav>
+
 
 	<div ng-show="mediaCtrl.hasErrorMedias()">
 		<div ng-include="'module-media/templates/creerMedia.html'">
 		</div>
 	</div>
+
+
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
+	<div>test</div>
 
 </div>

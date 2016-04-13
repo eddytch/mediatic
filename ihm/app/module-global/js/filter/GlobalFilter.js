@@ -5,7 +5,7 @@ angular.module('ModuleGlobal').filter('DateFormat', [ function() {
 		}
 		return;
 	}
-} ]);
+}]);
 
 angular.module('ModuleGlobal').filter('NomPrenom', [ function() {
 	return function(input) {
@@ -14,4 +14,14 @@ angular.module('ModuleGlobal').filter('NomPrenom', [ function() {
 		}
 		return "-";
 	}
-} ]);
+}]);
+
+angular.module('ModuleGlobal').filter('for', [ function() {
+	return function(input, total) {
+		nb = parseInt(total);
+		for (var i=0; i<nb; i++) {
+			input.push(i);
+		}
+		return input;
+	};
+}]);
