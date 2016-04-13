@@ -14,4 +14,10 @@ angular.module('ModuleMedia').config(function($routeProvider){
 		controllerAs : 'creerMediaCtrl'
 	});
 	
+	$routeProvider.when('/media=:id', {
+		templateUrl : './module-media/templates/voirMedia.html',
+		controller : 'VoirMediaController',
+		controllerAs : 'voirMediaCtrl'
+	});
+	
 });

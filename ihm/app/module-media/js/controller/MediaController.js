@@ -11,33 +11,32 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	myCtrl.medias = undefined;
 	myCtrl.info = undefined;
 	
+	
 	MediaService.getInfo().then(function(response){
 		myCtrl.info = response;
 	}, function(){
 		myCtrl.info = -1;
 	});
 	
-	var getMedia = function(params){
+	var getMedias = function(params){
 		MediaService.getList(params).then(function(response){
 			myCtrl.medias = response;
 		}, function(){
 			myCtrl.medias = -1;
 		});
 	}
-	getMedia({});
+	getMedias({});
 		
 	myCtrl.submit = function(){
 		var params = {};
 		if (myCtrl.select) {
 			params = myCtrl.select;
 		}
-		console.log(params);
-		getMedia(params);
+		getMedias(params);
 	}
 	
 	myCtrl.goPage = function (page) {
-		myCtrl.select = {page: page};
-		myCtrl.submit();
+		getMedias({page: page});
 	}	
 
 	
@@ -57,9 +56,9 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 		console.warn('TODO : louer... ' + media.id);
 	}
 
+
 	myCtrl.voirMedia = function(media) {
-		console.warn('TODO : voir... ' + media.id);
-		$location.path('/media/'+id);
+		$location.path('/media='+media.id);
 	}
 
 	myCtrl.editProduit = function(media) {

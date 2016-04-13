@@ -49,13 +49,13 @@
 					<td ng-bind="media.emprunteur|NomPrenom"></td>
 					<td ng-bind="media.retour|DateFormat"></td>
 					<td>
-						<button type="button" class="btn btn-default" ng-click="mediaCtrl.louerMedia(media.id)">
+						<button type="button" class="btn btn-default" ng-click="mediaCtrl.louerMedia(media)">
 							<span class="glyphicon glyphicon-new-window"></span>
 						</button>
-						<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media.id)">
+						<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media)">
 							<span class="glyphicon glyphicon-zoom-in"></span>
 						</button>
-						<button type="button" class="btn btn-default" ng-click="mediaCtrl.editMedia(media.id)">
+						<button type="button" class="btn btn-default" ng-click="mediaCtrl.editMedia(media)">
 							<span class="glyphicon glyphicon-pencil"></span>
 						</button>
 					</td>

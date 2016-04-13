@@ -1,0 +1,41 @@
+<div class="row"  ng-hide="voirMediaCtrl.hasErrorLivre()">
+	<div class="col-sm-12 col-md-6">
+		<div class="thumbnail">
+			<div class="caption">
+				<h3>
+					<span ng-bind="voirMediaCtrl.media.titre"></span> 
+				</h3>
+											
+				<div ng-bind="voirMediaCtrl.media.id"></div>				
+				<div ng-bind="voirMediaCtrl.media.auteur"></div>								
+				<div><span class="{{voirMediaCtrl.media.type | TypeIcon}}"></span></div>							
+				<div ng-bind="voirMediaCtrl.media.emprunteur | NomPrenom"></div>
+											
+				<div>
+					<table class="table table-hover table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Emprunteur</th>
+								<th>Date emprunt</th>
+								<th>Date retour</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="emprunteur in voirMediaCtrl.media.emprunteurs">
+								<td ng-bind="emprunteur.adherent | NomPrenom"></td>
+								<td ng-bind="emprunteur.depart | DateFormat"></td>
+								<td ng-bind="emprunteur.retour | DateFormat"></td>							
+							</tr>
+						</tbody>
+					</table>
+				</div>
+						
+				<div ng-bind="voirMediaCtrl.media.retour | DateFormat"></div>
+								
+				<p>
+					<a href="#" class="btn btn-primary" role="button">Button</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
