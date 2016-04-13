@@ -58,7 +58,7 @@
 					<!-- champ de recherche -->
 					<div class="input-group" id="mainRechercher">
 						<label for="inputRechercher" class="hidden"> recherche : </label>
-						<input type="text" name="inputRechercher" id="inputRechercher"
+						<input type="text" ng-model="search" name="inputRechercher" id="inputRechercher"
 							class="form-control" placeholder="rechercher" />
 						<!-- bouton de recherche -->
 						<span class="input-group-btn">
@@ -96,7 +96,7 @@
              ...
              -->
 				<tbody id="bodyRecherche">
-					<tr dir-paginate="adherent in adherentController.adherents | itemsPerPage: 10 | filter : {id : rechercher0 , nom : rechercher1 , prenom : rechercher2, date_naissance : rechercher3 }">
+					<tr dir-paginate="adherent in adherentController.adherents | itemsPerPage: 10 | filter : {id : rechercher0 , nom : rechercher1 , prenom : rechercher2, date_naissance : rechercher3 } | filter : search">
 						<th ng-bind="adherent.id"></th>
 						<th ng-bind="adherent.nom"></th>
 						<th ng-bind="adherent.prenom"></th>
@@ -135,7 +135,7 @@
 					//Pour ajouter les boutons de recherche lorsqu'on est en mode smartphone ou tablette
 					divRech
 							.append('<div class="input-group  rechercherAnnexe">'
-									+ '<input type="text" name="inputRechercher" id="inputRechercher' + colonne + '" class="form-control inline" placeholder="rechercher ' + valeurColonne + '"/>'
+									+ '<input type="text" ng-model="rechercher' + colonne +'" name="inputRechercher" id="inputRechercher' + colonne + '" class="form-control inline" placeholder="rechercher ' + valeurColonne + '"/>'
 									+ '<span class="input-group-btn">'
 									+ '<button class="btn btn-default  inline boutonRechercher"> <span class="fa fa-search"></span>'
 									+ '</button>' + '</span>' + '</div>');
