@@ -38,24 +38,14 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	myCtrl.goPage = function (page) {
 		getMedias({page: page});
 	}	
-
 	
 	myCtrl.hasErrorMedias = function(){
 		return !(myCtrl.medias===undefined || ( _.isArray(myCtrl.medias) && myCtrl.medias.length>0));
 	}
 
-	myCtrl.getEmprunteur = function(media) {
-		if(media.emprunteur){
-			return media.emprunteur.nom + " " + media.emprunteur.prenom;
-		}
-		return "-";
-	}
-	
-
 	myCtrl.louerMedia = function(media) {
 		console.warn('TODO : louer... ' + media.id);
 	}
-
 
 	myCtrl.voirMedia = function(media) {
 		$location.path('/media='+media.id);

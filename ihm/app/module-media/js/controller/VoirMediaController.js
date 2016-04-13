@@ -18,7 +18,4 @@ angular.module('ModuleMedia').controller('VoirMediaController', ['$routeParams',
 		myCtrl.medias = -1;
 	});
 	
-	
-
-	
 }]);

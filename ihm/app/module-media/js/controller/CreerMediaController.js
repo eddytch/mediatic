@@ -33,7 +33,7 @@ angular.module('ModuleMedia').controller('CreerMediaController', ['$location','$
 		}
 		
 		var media = {
-//				id : 'myId' + (id++),
+				id : myCtrl.info.items +1,
 				titre  : myCtrl.ajout.inputTitre,
 				type   : myCtrl.ajout.inputType,
 				auteur : myCtrl.ajout.inputAuteur,
