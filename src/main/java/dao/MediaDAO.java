@@ -62,7 +62,7 @@ public class MediaDAO extends GenericDAO<Media> {
         }
         //Si le media contient un type on filtre avec le type dans la requete
         if (media.getType() != null) {
-            uneReq.setParameter("type", media.getType().toString()) ;
+            uneReq.setParameter("type", media.getType()) ;
         }
 
         // On requete la liste des medias avec la requetes
