@@ -1,10 +1,12 @@
 var moduleAdherent = angular.module("ModuleAdherent") ;
 moduleAdherent.service('ServiceAdherent',['$http',function($http){
+    var self = this ;
 
     var uri = "http://10.34.10.140:8080/resource/adherent.recherche" ;
     var promise = undefined ;
 
     this.adherents = [] ;
+
 
     this.getAdherents = function(){
         if(promise==undefined) {
@@ -18,12 +20,13 @@ moduleAdherent.service('ServiceAdherent',['$http',function($http){
                             					prenom : itemFromServeur.prenom,
                             					date_naissance : itemFromServeur.date_naissance,
                             					cotisation_correcte : itemFromServeur.cotisation_correcte
-                            			};
-                            			adherents.push(itemForIHM);
+                                        };
+                                        self.adherents.push(itemForIHM);
                             }
                         }
                       );
         }
+        return promise ;
 
     }
 

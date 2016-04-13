@@ -13,6 +13,7 @@
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
 <script src="../adherent.js"></script>
 <script src="../service/adherent-service.js"></script>
 <script src="../controller/adherent-controller.js"></script>
@@ -96,9 +97,10 @@
              ...
              -->
 				<tbody id="bodyRecherche">
-					<tr ng-repeat="adherent in adherentController.adherents.adherents">
+					<tr ng-repeat="adherent in adherentController.adherents | filter : {id : rechercher0 , nom : rechercher1 , prenom : rechercher2, date_naissance : rechercher3 }">
 						<th ng-bind="adherent.id"></th>
-						<th ng-bind="adherent.nom + adherent.prenom"></th>
+						<th ng-bind="adherent.nom"></th>
+						<th ng-bind="adherent.prenom"></th>
 						<th ng-bind="adherent.date_naissance"></th>
 						<th ng-bind="adherent.cotisation_correcte"></th>
 						<th>2000</th>
@@ -108,7 +110,7 @@
 		</div>
 		<script>
 			//tableau contenant le nom des colonnes
-			var tableauColonne = [ "Id adhérent", "Nom et prénom",
+			var tableauColonne = [ "Id adhérent", "Nom", "Prenom",
 					"Date de naissance", "A jour cotisation",
 					"Nombre de médias" ];
 			var tableauDonnees = [
@@ -128,7 +130,7 @@
 				var valeurColonne = tableauColonne[colonne];
 				var inputRechercherPremiere = "";
 				//Pour les trois premières colonnes
-				if (colonne < 3) {
+				if (colonne < 4) {
 					//Pour ajouter les boutons de recherche lorsqu'on est en mode smartphone ou tablette
 					divRech
 							.append('<div class="input-group  rechercherAnnexe">'
@@ -139,7 +141,7 @@
 					inputRechercherPremiere = '<form class="form-inline">'
 							+ ''
 							+ '<div class="input-group">'
-							+ '<input type="text" name="rechercher' + colonne + '" id="rechercher' + colonne + '" class="form-control rechercher hidden-sm hidden-xs form-control" />'
+							+ '<input type="text" ng-model="rechercher' + colonne +'"name="rechercher' + colonne + '" id="rechercher' + colonne + '" class="form-control rechercher hidden-sm hidden-xs form-control" />'
 							+ '<span class="input-group-btn">'
 							+ '<button class="btn btn-default  inline hidden-sm hidden-xs"><span class="fa fa-search"></span></button>'
 							+ '</span>' + '</div>' + '</form>'
