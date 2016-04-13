@@ -20,14 +20,6 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	}
 	
 
-	myCtrl.getEmprunteur = function(media) {
-		if(media.emprunteur){
-			return media.emprunteur.nom + " " + media.emprunteur.prenom;
-		}
-		return "-";
-	}
-	
-
 	myCtrl.louerMedia = function(media) {
 		console.warn('TODO : louer... ' + media.id);
 	}

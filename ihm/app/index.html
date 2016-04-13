@@ -20,6 +20,7 @@
 <script src="module-global/js/global.js"></script>
 <script src="module-global/js/controller/TopController.js"></script>
 
+
 <script src="module-menu/js/menu.js"></script>
 <script src="module-menu/js/controller/MenuController.js"></script>
 
@@ -29,6 +30,7 @@
 <script src="module-media/js/Media.js"></script>
 <script src="module-media/js/controller/MediaController.js"></script>
 <script src="module-media/js/service/MediaService.js"></script>
+<script src="module-media/js/filter/MediaFilter.js"></script>
 
 <script src="module-login/js/login.js"></script>
 <script src="module-login/js/controller/LoginController.js"></script>
@@ -61,12 +63,13 @@
 	</header>
 	
 	<!-- Lorsqu'on est connectée -->
-	<div ng-if="!topCtrl.isConnected()">
-		<div ng-include="'module-login/templates/login.html'"></div>
-	</div>
+<!-- 	<div ng-if="!topCtrl.isConnected()"> -->
+<!-- 		<div ng-include="'module-login/templates/login.html'"></div> -->
+<!-- 	</div> -->
 	
-	<!-- Lorsqu'on est pas connecté -->
-	<div ng-if="topCtrl.isConnected()">
+<!-- 	<!-- Lorsqu'on est pas connecté --> -->
+<!-- 	<div ng-if="topCtrl.isConnected()"> -->
+<div>
 		<!-- Insertion du menu -->
 		<div ng-include="'module-menu/templates/menu.html'"></div>
 			

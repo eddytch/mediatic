@@ -23,14 +23,9 @@
 					<td ng-bind="media.id"></td>
 					<td ng-bind="media.titre"></td>
 					<td ng-bind="media.auteur"></td>
-
-					<td ng-if="media.type!='DVD'&&media.type=='CD'&&media.type=='Livre'" ng-bind="media.type"></td>
-					<td ng-if="media.type=='DVD'"><span class="glyphicon glyphicon-film"></span></td>
-					<td ng-if="media.type=='CD'"><span class="glyphicon glyphicon-cd" aria-hidden="true">CD</span></td>
-					<td ng-if="media.type=='Livre'"><span class="glyphicon glyphicon-book"></span></td>
-
-					<td ng-bind="mediaCtrl.getEmprunteur(media)"></td>
-					<td ng-bind="media.retour"></td>
+					<td><span class="{{media.type|TypeIcon}}"></span>
+					<td ng-bind="media.emprunteur|Emprunteur"></td>
+					<td ng-bind="media.retour|DateFormat"></td>
 					<td>
 						<button type="button" class="btn btn-default" ng-click="catCtrl.louerMedia(media.id)">
 							<span class="glyphicon glyphicon-new-window"></span>
