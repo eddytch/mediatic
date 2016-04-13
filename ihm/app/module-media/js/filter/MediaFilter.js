@@ -12,21 +12,3 @@ angular.module('ModuleMedia').filter('TypeIcon', [ function() {
 		}
 	}
 } ]);
-
-angular.module('ModuleMedia').filter('DateFormat', [ function() {
-	return function(input) {
-		if (input) {
-			return input.split(" ")[0];
-		}
-		return;
-	}
-} ]);
-
-angular.module('ModuleMedia').filter('Emprunteur', [ function() {
-	return function(input) {
-		if (input) {
-			return input.nom + " " + input.prenom;
-		}
-		return "-";
-	}
-} ]);

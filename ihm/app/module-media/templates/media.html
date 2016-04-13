@@ -1,6 +1,28 @@
 <div class="container">
-	<div class="responsive-table-line block-center" id="resultatRecherche">
-		<table class="table table-hover table-bordered">
+	<div class="responsive-table-line block-center">
+		<div class="table ">
+			<form class="form-inline" ng-submit="mediaCtrl.submit()">
+				<div class="form-group">
+					<input class="form-control" type="text" name="titre" ng-model="mediaCtrl.medias.select.titre" placeholder="Titre des medias" />
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="auteur" ng-model="mediaCtrl.medias.select.auteur" placeholder="Auteur des medias" />
+				</div>
+				<div class="form-group">
+					<select class="form-control" name="type" ng-model="mediaCtrl.medias.select.type">
+						<option value="" disabled selected>Type des medias</option>
+						<option>DVD</option>
+						<option>Livre</option>
+						<option>CD</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</form>
+		</div>
+
+		<table class="table table-hover table-bordered table-striped">
 			<thead>
 				<tr>
 					<th>Id</th>
@@ -24,7 +46,7 @@
 					<td ng-bind="media.titre"></td>
 					<td ng-bind="media.auteur"></td>
 					<td><span class="{{media.type|TypeIcon}}"></span>
-					<td ng-bind="media.emprunteur|Emprunteur"></td>
+					<td ng-bind="media.emprunteur|NomPrenom"></td>
 					<td ng-bind="media.retour|DateFormat"></td>
 					<td>
 						<button type="button" class="btn btn-default" ng-click="catCtrl.louerMedia(media.id)">
@@ -41,4 +63,13 @@
 			</tbody>
 		</table>
 	</div>
+	<nav>
+		<ul class="pagination">
+			<li><a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+			</a></li>
+			<li ng-repeat="n in [1,2,3,4,5,6,7]"><span ng-bind="n"></a>
+			<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+			</a></li>
+		</ul>
+	</nav>
 </div>
