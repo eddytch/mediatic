@@ -1,4 +1,4 @@
-angular.module("ModuleAdherent",['ngRoute','angularUtils.directives.dirPagination']) ;
+angular.module("ModuleAdherent",['ngRoute']) ;
 // Configuration du module ModuleCommande
 // => Injection du Provider du service $route afin de configurer la route des commandes.
 angular.module('ModuleAdherent').config(function($routeProvider){

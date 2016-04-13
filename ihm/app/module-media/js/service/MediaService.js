@@ -2,6 +2,7 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function($http) 
 
 		
 		var self = this;
+		var lignes = [];
 		var url = "http://10.34.10.140:8080/resource/media.recherche";
 		var urlInfo = "http://10.34.10.140:8080/resource/media.recherche.taille";// {"items":X,"pages":Y}
 		
@@ -18,20 +19,20 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function($http) 
 			});
 		}
 		
-//		self.submit = function(params){
-//			console.log(url, params);
-//			initPromise();
-//		}
-		
-//		format d'un media :
-//		id : "69",
-//		titre : "La petite maison dans la prairie",
-//		auteur : "Michael Landon",
-//		type : "DVD",
-//		emprunteur : null, emprunteur actuel
-//		emprunteurs : [], historique des emprunteurs
-//		retour : null
-		
+		// Fonction pour ajouter un media
+		self.add = function(produit) {	
+
+			var index = lignes.findIndex(function(lignes) {
+				return lignes.media.id == media.id;
+			});
+			
+			if (index != -1) {
+				lignes.push({
+					media : media
+				});
+			} 
+		};
+
 		self.getList = function(params){
 			return getPromise(params);
 		}

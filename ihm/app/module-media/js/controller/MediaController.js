@@ -41,8 +41,15 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	
 
 	
-	myCtrl.hasErrorProduits = function(){
+	myCtrl.hasErrorMedias = function(){
 		return !(myCtrl.medias===undefined || ( _.isArray(myCtrl.medias) && myCtrl.medias.length>0));
+	}
+
+	myCtrl.getEmprunteur = function(media) {
+		if(media.emprunteur){
+			return media.emprunteur.nom + " " + media.emprunteur.prenom;
+		}
+		return "-";
 	}
 	
 

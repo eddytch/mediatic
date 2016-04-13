@@ -15,7 +15,13 @@ angular.module('ModuleLogin').controller('LoginController', ['$location', '$root
 			var login = myCtrl.login;
 			var mdp = myCtrl.pwd;
 			
-			LoginService.connect(login, mdp);
+			LoginService.connect(login, mdp).then(function(response) {
+				if (!response) {
+		    		$scope.response = "Erreur d'authentification !!!";
+				} else {
+					$scope.response = undefined;
+				}
+			});			
 		}
 	}
 }]);
