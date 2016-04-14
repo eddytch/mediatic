@@ -7,11 +7,11 @@ moduleAdherent.service('ServiceAdherent',['$http',function($http){
 
     this.adherents = [] ;
 
-
-    this.getAdherents = function(){
+    this.getAdherents = function(object){
         if(promise==undefined) {
-            promise = $http.get('http://10.34.10.140:8080/resource/adherent.recherche').then(
+            promise = $http.get('http://10.34.10.140:8080/resource/adherent.recherche',object).then(
                         function(response){
+                            self.adherents.splice(0,self.adherents.length)
                             for(var index in response.data){
                             			var itemFromServeur = response.data[index];
                             			var itemForIHM = {
@@ -22,6 +22,7 @@ moduleAdherent.service('ServiceAdherent',['$http',function($http){
                             					cotisation_correcte : itemFromServeur.cotisation_correcte
                                         };
                                         self.adherents.push(itemForIHM);
+                                        promise = undefined ;
                             }
                         }
                       );
