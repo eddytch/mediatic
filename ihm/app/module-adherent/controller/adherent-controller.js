@@ -21,13 +21,11 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
     }
 
     this.getPageSuivante = function() {
-        self.correctPage() ;
         self.pageCourante ++ ;
         self.getPageCourante() ;
     }
 
     this.getPagePrecedente = function() {
-        self.correctPage() ;
         self.pageCourante -- ;
         self.getPageCourante() ;
     }
@@ -41,11 +39,14 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
     }
 
     this.correctPage = function(){
-        if(Object.keys(self.rechCrit['params']).length == 0)
-            self.pageCourante = 0 ;
+        if(Object.keys(self.rechCrit['params']).length != 0 )
+                self.pageCourante = 0 ;
     }
 
     this.getAdherents = function(numCrit, value){
+        if(numCrit != self.numCritPrec || value != self.valuePrec)
+                    self.pageCourante = 0 ;
+
         self.numCritPrec = numCrit ;
         self.valuePrec = value ;
 
@@ -59,6 +60,8 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
             delete params[nom] ;
 
         service.getAdherents(self.rechCrit) ;
+
+
 
     }
     this.getPage(this.pageCourante) ;
