@@ -5,10 +5,12 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
     this.pageCourante = 0 ;
     var service = ServiceAdherent ;
     this.adherents = service.adherents ;
+    this.service = service ;
     this.rechCrit = { params : {}} ;
 
     this.numCritPrec = 0 ;
     this.valuePrec = "" ;
+
 
 
     this.noms = ['id','nom','prenom','email'] ;
@@ -19,29 +21,36 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
     }
 
     this.getPageSuivante = function() {
+        self.correctPage() ;
         self.pageCourante ++ ;
         self.getPageCourante() ;
     }
 
     this.getPagePrecedente = function() {
+        self.correctPage() ;
         self.pageCourante -- ;
         self.getPageCourante() ;
     }
 
 
     this.getPageCourante = function(){
-         if(self.rechCrit == {})
+         if(Object.keys(self.rechCrit['params']).length == 0)
              self.getPage(self.pageCourante) ;
          else
              self.getAdherents(self.numCritPrec,self.valuePrec) ;
     }
 
+    this.correctPage = function(){
+        if(Object.keys(self.rechCrit['params']).length == 0)
+            self.pageCourante = 0 ;
+    }
+
     this.getAdherents = function(numCrit, value){
         self.numCritPrec = numCrit ;
-        self.value = value ;
+        self.valuePrec = value ;
 
         var nom = self.noms[numCrit] ;
-        self.pageCourante = 0 ;
+
         var params = self.rechCrit['params'] ;
         params['page'] = self.pageCourante ;
         if (value != undefined && value != "")
@@ -50,6 +59,7 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
             delete params[nom] ;
 
         service.getAdherents(self.rechCrit) ;
+
     }
     this.getPage(this.pageCourante) ;
 

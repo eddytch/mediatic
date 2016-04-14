@@ -7,9 +7,16 @@ moduleAdherent.service('ServiceAdherent',['$http',function($http){
 
     this.adherents = [] ;
 
+    this.nbPages = Infinity;
+
     this.getAdherents = function(object){
         if(promise==undefined) {
-            promise = $http.get('http://10.34.10.140:8080/resource/adherent.recherche',object).then(
+            pages = $http.get(uri+'.taille',object).then(
+                function(response){
+                    self.nbPages = response.data['pages']
+                }
+            );
+            promise = $http.get(uri,object).then(
                         function(response){
                             self.adherents.splice(0,self.adherents.length)
                             for(var index in response.data){
