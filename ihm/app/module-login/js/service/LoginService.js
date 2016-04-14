@@ -24,5 +24,10 @@ angular.module('ModuleLogin').service('LoginService', ['$http', '$q', function($
 			return false;
 		});
 	};
+	
+	// Fonction déconnexion
+	this.logout = function() {
+		connected = false;
+	};
     
 }]);

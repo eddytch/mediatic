@@ -1,5 +1,5 @@
 <!-- Bloc Menu -->
-	<div ng-controller="MenuController as menuCtrl">
+	<div ng-controller="LoginController as loginCtrl">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
   					 <!-- Brand and toggle get grouped for better mobile display -->
@@ -11,7 +11,7 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>	
 					</button>
-					<a class="navbar-brand" href="#">Accueil</a>
+					<a class="navbar-brand" href="#media">Accueil</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,7 +22,6 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="#media/creation">Création</a></li>
-								<li><a href="#">Consultation</a></li>
 								<li><a href="#media">Recherche</a></li>
 							</ul>
 						</li>
@@ -34,15 +33,13 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="#adherent/creation">Création</a></li>
-								<li><a href="#">Consultation</a></li>
 								<li><a href="#adherent">Recherche</a></li>
 							</ul>
 						</li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Connexion</a></li>
-						<li><a href="#">Déconnexion</a></li>
+						<li><a ng-click="loginCtrl.logout()" href="">Déconnexion</a></li>
 					</ul>
 				</div>			
 			</div>

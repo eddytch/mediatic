@@ -1,5 +1,8 @@
 var moduleAdherent = angular.module("ModuleAdherent") ;
-moduleAdherent.controller('AdherentController',['$scope','ServiceAdherent', '$location', function($scope,ServiceAdherent,$location){
+moduleAdherent.controller('AdherentController', ['$scope','$rootScope', '$location', 'ServiceAdherent', function($scope, $rootScope, $location, ServiceAdherent){
+	
+	$rootScope.page = $rootScope.page || {};
+	$rootScope.page.titre = "Recherche adhérent";
 
     self = this ;
     this.pageCourante = 0 ;

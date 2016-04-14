@@ -19,8 +19,11 @@
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-user"></span>
 							</span>
-							<input type="text" class="form-control" id="inputLogin" 
+							<input type="text" class="form-control" id="inputLogin" name="inputLogin"
 								   ng-model="loginCtrl.login" placeholder="Login" required="required">
+						</div>												
+						<div ng-messages="myFormLogin.inputLogin.$error" class="col-sm-offset-6 col-sm-6">
+							<span ng-message="required">Champ requis</span> 
 						</div>
 					</div>
 				</div>
@@ -31,8 +34,11 @@
 							<span class="input-group-addon">
 								<span class="fa fa-key"></span>
 							</span>
-							<input ng-model="loginCtrl.pwd"
+							<input ng-model="loginCtrl.pwd" name="inputPwd"
 								   type="password" class="form-control" id="inputPwd" placeholder="Password" required="required">
+						</div>												
+						<div ng-messages="myFormLogin.inputPwd.$error" class="col-sm-offset-6 col-sm-6">
+							<span ng-message="required">Champ requis</span> 
 						</div>
 					</div>
 				</div>

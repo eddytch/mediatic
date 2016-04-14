@@ -78,22 +78,20 @@
 		<div ng-include="'module-menu/templates/menu.html'"></div>
 			
 		<!-- Contenu de la page -->
+		
 		<div>
 			<section>
 				<article>
-					<h1>Bienvenue à la Bibliothèque DTA-Ingénierie</h1>
-					<h2>Toute l'équipe vous souhaite la bienvenue !!!</h2>
+					<h1 ng-bind="page.titre"></h1>
 				</article>
 			</section>
-		</div>	
+		</div>
 		
 		<!-- Zone visée par ngRoute-->
 		<ng-view></ng-view>
 	</div>
 
-	<!-- Footer -->
-	
-	
+	<!-- Footer -->	
 	<div>
 		<footer>
 			<div>
