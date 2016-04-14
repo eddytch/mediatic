@@ -60,20 +60,27 @@
 			<div class="col-md-6 col-s-12 col-xs-12" id="partieRechercher">
 				<form class="form-inline">
 					<!-- champ de recherche -->
+
 					<div class="input-group" id="mainRechercher">
+						<!--
 						<label for="inputRechercher" class="hidden"> recherche : </label>
 						<input type="text" ng-model="search" name="inputRechercher" id="inputRechercher"
 							class="form-control" placeholder="rechercher" />
+						-->
 						<!-- bouton de recherche -->
+						<!--
 						<span class="input-group-btn">
 							<button class="btn btn-secondary btn-default" type="button">
 								<span class="fa fa-search"></span>
 							</button>
 						</span>
+						-->
 						<!--bouton d'ajout -->
+						<!--
 						<button
 							class="btn btn-default fa fa-plus boutonAjout form-control"
 							id="ajout"></button>
+						-->
 					</div>
 
 
@@ -115,7 +122,7 @@
 						<th ng-bind="adherent.nom"></th>
 						<th ng-bind="adherent.prenom"></th>
 						<th ng-bind="adherent.email"></th>
-						<th ng-bind="adherent.date_naissance"></th>
+						<th ng-bind="adherent.date_naissance | DateFormat"></th>
 						<th ng-bind="adherent.cotisation_correcte?'Oui':'Non'"></th>
 						<th ng-bind="adherent.nombre_media"></th>
 					</tr>
@@ -157,17 +164,13 @@
 							.append('<div class="input-group  rechercherAnnexe">'
 									+ '<input type="text"  ng-model="rechercher' +
 									colonne +'" ng-model-options="{ debounce: 500 }" ng-change="adherentController.getAdherents('+colonne+',rechercher' + colonne +')" name="inputRechercher" id="inputRechercher' + colonne + '" class="form-control inline" placeholder="rechercher ' + valeurColonne + '"/>'
-									+ '<span class="input-group-btn">'
-									+ '<button class="btn btn-default  inline boutonRechercher"> <span class="fa fa-search"></span>'
-									+ '</button>' + '</span>' + '</div>');
+									+ '</div>');
 					inputRechercherPremiere = '<form class="form-inline">'
 							+ ''
 							+ '<div class="input-group">'
 							+ '<input type="text"  ng-model="rechercher' +
 							colonne +'" ng-model-options="{ debounce: 500 }" ng-change="adherentController.getAdherents('+colonne+',rechercher' + colonne +')" name="rechercher' + colonne + '" id="rechercher' + colonne + '" class="form-control rechercher hidden-sm hidden-xs form-control" />'
-							+ '<span class="input-group-btn">'
-							+ '<button class="btn btn-default  inline hidden-sm hidden-xs"><span class="fa fa-search"></span></button>'
-							+ '</span>' + '</div>' + '</form>'
+						    + '</form>'
 				}
 				//On ajoute le titre de la colonne avec un bouton pour rechercher
 				$("#premiereLigne").append(
