@@ -30,7 +30,6 @@
 					<th>Type</th>
 					<th>Nom de l'emprunteur</th>
 					<th>Date de retour</th>
-					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -43,20 +42,15 @@
 				<tr ng-show="mediaCtrl.hasErrorProduits()">
 					<td colspan="7">Une erreur est survenue</td>
 				</tr>
-				<tr ng-repeat="media in mediaCtrl.medias">
+
+				<tr class="trClick" ng-repeat="media in mediaCtrl.medias" 
+				    ng-click="mediaCtrl.voirMedia(media)">
+					<td ng-bind="media.id"></td>
 					<td ng-bind="media.titre"></td>
 					<td ng-bind="media.auteur"></td>
 					<td><span class="{{media.type|TypeIcon}}"></span>
 					<td ng-bind="media.emprunteur|NomPrenom"></td>
 					<td ng-bind="media.retour|DateFormat"></td>
-					<td>
-						<button type="button" class="btn btn-default" ng-click="mediaCtrl.louerMedia(media)">
-							<span class="glyphicon glyphicon-new-window"></span>
-						</button>
-						<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media)">
-							<span class="glyphicon glyphicon-zoom-in"></span>
-						</button>
-					</td>
 				</tr>
 			</tbody>
 		</table>

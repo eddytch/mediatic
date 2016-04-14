@@ -27,3 +27,7 @@ footer:hover {
 	-webkit-transition: bottom 2s;
 	transition: bottom 0.5s;
 }
+
+.trClick {
+	cursor: pointer;
+}

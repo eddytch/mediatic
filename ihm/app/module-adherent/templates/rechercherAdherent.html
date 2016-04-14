@@ -1,60 +1,3 @@
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../css/menu.css" />
-<link rel="stylesheet" href="../css/global.css" />
-<title>Rechercher un adh√©rentr</title>
-
-<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
-<link rel="stylesheet" href="../../../../maquette/font-awesome/css/font-awesome.min.css" />
-<link rel="stylesheet" href="../../../../maquette/css/rechercherMedia.css" />
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../../bower_components/angular/angular.js"></script>
-<script src="../../bower_components/angular-route/angular-route.js"></script>
-<script src="../../bower_components/angular-utils-pagination/dirPagination.js"></script>
-<script src="../js/adherent.js"></script>
-<script src="../service/adherent-service.js"></script>
-<script src="../controller/adherent-controller.js"></script>
-
-
-</head>
-<body ng-app="ModuleAdherent" ng-controller="AdherentController as adherentController">
-
-
-	<header>
-		<h1 class="blink">DTA-Ing√©nierie</h1>
-	</header>
-
-	<div>
-		<nav>
-			<ul id="menu-accordeon">
-				<li><a href="index.html">Accueil</a>
-					<ul>
-						<li><a href="connexion.html">Connexion</a></li>
-						<li><a href="rechercherMedia.html">M√©dia</a></li>
-						<li><a href="rechercherAdherent.html">Adh√©rent</a></li>
-					</ul></li>
-				<li><a href="rechercheMedia.html">M√©dia</a>
-					<ul>
-						<li><a href="addMedia.html">Cr√©ation</a></li>
-						<li><a href="consultationMedia.html">Consultation</a></li>
-						<li><a href="rechercherMedia.html">Recherche</a></li>
-					</ul></li>
-				<li><a href="rechercheAdherent.html">Adh√©rent</a>
-					<ul>
-						<li><a href="addAdherent.html">Cr√©ation</a></li>
-						<li><a href="consultationAdherent.html">Consultation</a></li>
-						<li><a href="rechercherAdherent.html">Recherche</a></li>
-					</ul></li>
-			</ul>
-		</nav>
-	</div>
--->
 	<div class="container-fluid">
 		<div class="row center-block">
 			<div class="col-md-6 col-s-12 col-xs-12" id="partieRechercher">
@@ -62,42 +5,21 @@
 					<!-- champ de recherche -->
 
 					<div class="input-group" id="mainRechercher">
-						<!--
-						<label for="inputRechercher" class="hidden"> recherche : </label>
-						<input type="text" ng-model="search" name="inputRechercher" id="inputRechercher"
-							class="form-control" placeholder="rechercher" />
-						-->
-						<!-- bouton de recherche -->
-						<!--
-						<span class="input-group-btn">
-							<button class="btn btn-secondary btn-default" type="button">
-								<span class="fa fa-search"></span>
-							</button>
-						</span>
-						-->
-						<!--bouton d'ajout -->
-						<!--
-						<button
-							class="btn btn-default fa fa-plus boutonAjout form-control"
-							id="ajout"></button>
-						-->
 					</div>
-
-
 					<a class="visible-xs visible-sm" id="rechercheAvanceLien">afficher/masquer
-						recherche avanc√©</a>
+						recherche avancÈ</a>
 				</form>
 			</div>
 		</div>
 		<div class="row center-block hidden-md hidden-lg ">
 			<div class="col-md-12 col-s-12 col-xs-12">
-				<!-- La partie de recherche avanc√© -->
+				<!-- La partie de recherche avancÈ -->
 				<form class='form-inline' id="rechercherAvance"></form>
 			</div>
 		</div>
 		<br/>
 		<button ng-show="adherentController.pageCourante > 0" ng-click="adherentController.getPagePrecedente()">
-			Pr√©c√©dent
+			PrÈcÈdent
 		</button>
 		<button ng-show="adherentController.pageCourante +1 < adherentController.service.nbPages" ng-click="adherentController.getPageSuivante()">
 			Suivant
@@ -137,19 +59,12 @@
 					</tr>
 				</tbody>
 			</table>
-
-			<!--
-			<dir-pagination-controls
-					on-page-change="adherentController.getPage(pageNumber)"
-					auto-hide="false">
-			</dir-pagination-controls>
-			-->
 		</div>
 		<script>
 			//tableau contenant le nom des colonnes
-			var tableauColonne = [ "Id adh√©rent", "Nom", "Prenom",
+			var tableauColonne = [ "Id adhÈrent", "Nom", "Prenom",
 					"Email", "Date de naissance", "A jour cotisation",
-					"Nombre de m√©dias","Action" ];
+					"Nombre de mÈdias","Action" ];
 			var tableauDonnees = [
 					[ 8923, "dimitri lanoe", "22/10/92", "Oui", 10 ],
 					[ 9201, "nicolas jean", "23/04/91", "Oui", 8 ],
@@ -166,7 +81,7 @@
 			for ( var colonne in tableauColonne) {
 				var valeurColonne = tableauColonne[colonne];
 				var inputRechercherPremiere = "";
-				//Pour les trois premi√®res colonnes
+				//Pour les trois premiËres colonnes
 				if (colonne < 4) {
 					//Pour ajouter les boutons de recherche lorsqu'on est en mode smartphone ou tablette
 					divRech
@@ -185,36 +100,15 @@
 				$("#premiereLigne").append(
 						'<th>'+ valeurColonne + '</h2>'
 								+ inputRechercherPremiere + '</th>');
-
 			}
-
 
 			$('#rechercherAvance').append(divRech);
 
-			/*
-			//Pour chaque ligne de donn√©es
-			for ( var ligneDonneesIndex in tableauDonnees) {
-				//Pour chaque colonne dans la ligne
-				var bodyRecherche = $("#bodyRecherche");
-				var tr = $("<tr>");
-
-				var ligneDonnees = tableauDonnees[ligneDonneesIndex];
-				for ( var donnees in ligneDonnees) {
-					//On ajoute la colonne
-					tr
-							.append('<td data-title="'+tableauColonne[donnees]+'" class="'+tableauCouleurs[donnees]+'">'
-									+ ligneDonnees[donnees] + '</td>');
-				}
-				bodyRecherche.append(tr);
-
-			}
-			*/
-
-			//On cache la recherche avanc√© en mode smartphone
+			//On cache la recherche avancÈ en mode smartphone
 			$('#rechercherAvance').hide();
-			// Lors d'un clic sur le lien de recherche avanc√©
+			// Lors d'un clic sur le lien de recherche avancÈ
 			$("#rechercheAvanceLien").click(function() {
-				//On affiche ou on masque la partie de recherche avance en fonction de la visibilit√© de cette partie
+				//On affiche ou on masque la partie de recherche avance en fonction de la visibilitÈ de cette partie
 				$('#rechercherAvance').toggle();
 
 			});
@@ -226,7 +120,7 @@
 		<footer>
 			<div>
 				<h3>
-					Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-Ing√©nierie</a>
+					Copyright by <a href="mailto:eddy.tchouague@gmail.com">DTA-IngÈnierie</a>
 				</h3>
 			</div>
 		</footer>
