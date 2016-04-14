@@ -12,15 +12,19 @@ angular.module('ModuleGlobal').filter('NomPrenom', [ function() {
 		if (input) {
 			return input.nom + " " + input.prenom;
 		}
-		return "-";
+		return;
 	}
 }]);
 
 angular.module('ModuleGlobal').filter('for', [ function() {
 	return function(input, total) {
-		nb = parseInt(total);
-		for (var i=0; i<nb; i++) {
-			input.push(i);
+		if(!total){
+			input.push(0);
+		}else{
+			nb = parseInt(total);
+			for (var i=0; i<nb; i++) {
+				input.push(i);
+			}
 		}
 		return input;
 	};
