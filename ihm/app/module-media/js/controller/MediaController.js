@@ -3,6 +3,7 @@
 angular.module('ModuleMedia').controller('MediaController', ['$location','$rootScope','MediaService', function($location, $rootScope, MediaService) {
 
 	var myCtrl = this;
+	var params = {};
 	var pageActive = 0;
 	
 	$rootScope.page = $rootScope.page || {};
@@ -18,11 +19,12 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	myCtrl.hasErrorMedias = function(){
 		return !(myCtrl.medias===undefined || ( _.isArray(myCtrl.medias) && myCtrl.medias.length>=0));
 	}
-
 	
 	//Fonction pour obtenir des medias en fonction des parametres transmit
-	var getMedias = function(params){
-		MediaService.getList(params).then(function(response){
+	var getMedias = function(){
+		var mesParams = params;
+		mesParams.page = pageActive;
+		MediaService.getList(mesParams).then(function(response){
 			myCtrl.medias = response;
 		}, function(){
 			myCtrl.medias = -1;
@@ -39,36 +41,30 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	}
 
 	//Récupération des medias au chargement de pa page html
-	getInfo({});
-	getMedias({page : pageActive});
+	getInfo(params);
+	getMedias(params);
 
 		
 	//récupération des medias en fonction des parametres saisient
 	myCtrl.submit = function(){
 		
-		var params = {};
 		if(myCtrl.select){
 			params = myCtrl.select;
 		}
 		getInfo(params);
-		
 		pageActive = 0;
-		params.page = 0;
-		
 		getMedias(params);
 	}
-	
-
 	
 //Gestion de la pagination		
  
 	myCtrl.pageN = function (page) {
 		pageActive = page;
-		getMedias({page: page});
+		getMedias(params);
 	}
 	
 	myCtrl.pageSuiv = function(){
-		if(pageActive < myCtrl.info.pages-1){
+		if(myCtrl.info.pages>0 && pageActive < (myCtrl.info.pages-1)){
 			pageActive++;
 			getMedias({page: pageActive});
 		}
@@ -89,11 +85,12 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 	
 	myCtrl.pageDisabled = function(test){
 		if(test){
-			if(pageActive == 0){
+			if(pageActive <= 0){
 				return "disabled";
 			}
 		}else {
-			if(pageActive ==  myCtrl.info.pages-1){
+			if(pageActive >= ( myCtrl.info.pages-1)){
+				console.log( myCtrl.info.pages-1);
 				return "disabled";
 			}
 		}
@@ -107,10 +104,6 @@ angular.module('ModuleMedia').controller('MediaController', ['$location','$rootS
 
 	myCtrl.voirMedia = function(media) {
 		$location.path('/media='+media.id);
-	}
-
-	myCtrl.editProduit = function(media) {
-		console.warn('TODO  : edit... ' + media.id);
 	}
 	
 }]);

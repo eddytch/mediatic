@@ -25,7 +25,6 @@
 		<table class="table table-hover table-bordered table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Titre</th>
 					<th>Auteur</th>
 					<th>Type</th>
@@ -45,7 +44,6 @@
 					<td colspan="7">Une erreur est survenue</td>
 				</tr>
 				<tr ng-repeat="media in mediaCtrl.medias">
-					<td ng-bind="media.id"></td>
 					<td ng-bind="media.titre"></td>
 					<td ng-bind="media.auteur"></td>
 					<td><span class="{{media.type|TypeIcon}}"></span>
@@ -58,9 +56,6 @@
 						<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media)">
 							<span class="glyphicon glyphicon-zoom-in"></span>
 						</button>
-						<button type="button" class="btn btn-default" ng-click="mediaCtrl.editMedia(media)">
-							<span class="glyphicon glyphicon-pencil"></span>
-						</button>
 					</td>
 				</tr>
 			</tbody>
@@ -71,16 +66,21 @@
 		<ul ng-if="mediaCtrl.info==undefined">
 				<li colspan="7">Chargement en cours</li>
 		</ul>
+		
 		<ul class="pagination" ng-if="mediaCtrl.info!=undefined">
+		
 			<li class= "{{mediaCtrl.pageDisabled(true)}}">
-				<a href="#/media" ng-click="mediaCtrl.pagePrec()"> <span>&laquo;</span></a>
+				<a ng-click="mediaCtrl.pagePrec()"> <span>&laquo;</span></a>
 			</li>
+			
 			<li ng-repeat="n in [] |for:mediaCtrl.info.pages" class="{{mediaCtrl.pageActive(n)}}">
-				<a href="#/media" ng-bind="n+1" ng-click="mediaCtrl.pageN(n)"></a>
+				<a ng-bind="n+1" ng-click="mediaCtrl.pageN(n)"></a>
 			</li>
+			
 			<li class="{{mediaCtrl.pageDisabled(false)}}">
-				<a href="#/media" ng-click="mediaCtrl.pageSuiv()"><span>&raquo;</span></a>
+				<a ng-click="mediaCtrl.pageSuiv()"><span>&raquo;</span></a>
 			</li>
+			
 		</ul>
 	</nav>
 

@@ -9,11 +9,9 @@ angular.module('ModuleMedia').controller('VoirMediaController', ['$routeParams',
 
 	myCtrl.media = undefined;
 	var idMedia  = $routeParams.id;
-	console.log(idMedia);
 	
 	MediaService.getMedia(idMedia).then(function(response){
 		myCtrl.media = response;
-		console.log(response);
 	}, function(){
 		myCtrl.medias = -1;
 	});
