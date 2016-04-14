@@ -18,6 +18,7 @@ moduleAdherent.service('ServiceAdherent',['$http',function($http){
                             					id : itemFromServeur.id,
                             					nom : itemFromServeur.nom,
                             					prenom : itemFromServeur.prenom,
+                            					email : itemFromServeur.email,
                             					date_naissance : itemFromServeur.date_naissance,
                             					cotisation_correcte : itemFromServeur.cotisation_correcte,
                             					nombre_media : itemFromServeur.nombre_media

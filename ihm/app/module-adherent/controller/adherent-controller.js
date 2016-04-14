@@ -11,7 +11,7 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
     this.valuePrec = "" ;
 
 
-    this.noms = ['id','nom','prenom','date_naissance','cotisation_correcte'] ;
+    this.noms = ['id','nom','prenom','email'] ;
 
     this.getPage = function(page){
         var rechPages = { params : { "page" : page}  } ;

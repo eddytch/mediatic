@@ -104,6 +104,7 @@
 						<th ng-bind="adherent.id"></th>
 						<th ng-bind="adherent.nom"></th>
 						<th ng-bind="adherent.prenom"></th>
+						<th ng-bind="adherent.email"></th>
 						<th ng-bind="adherent.date_naissance"></th>
 						<th ng-bind="adherent.cotisation_correcte?'Oui':'Non'"></th>
 						<th ng-bind="adherent.nombre_media"></th>
@@ -126,7 +127,7 @@
 		<script>
 			//tableau contenant le nom des colonnes
 			var tableauColonne = [ "Id adhérent", "Nom", "Prenom",
-					"Date de naissance", "A jour cotisation",
+					"Email", "Date de naissance", "A jour cotisation",
 					"Nombre de médias" ];
 			var tableauDonnees = [
 					[ 8923, "dimitri lanoe", "22/10/92", "Oui", 10 ],
