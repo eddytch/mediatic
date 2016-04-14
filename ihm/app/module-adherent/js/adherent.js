@@ -7,4 +7,9 @@ angular.module('ModuleAdherent').config(function($routeProvider){
 		controller : 'AdherentController',
 		controllerAs : 'adherentController'
 	});
+	$routeProvider.when('/adherent/creation', {
+    		templateUrl : './module-adherent/templates/addAdherent.html',
+    		controller : 'CreationAdherentController',
+    		controllerAs : 'creationAdherentController'
+    });
 });

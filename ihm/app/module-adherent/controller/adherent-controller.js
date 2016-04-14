@@ -43,6 +43,7 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
                 self.pageCourante = 0 ;
     }
 
+
     this.getAdherents = function(numCrit, value){
         if(numCrit != self.numCritPrec || value != self.valuePrec)
                     self.pageCourante = 0 ;
