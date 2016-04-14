@@ -19,7 +19,8 @@ moduleAdherent.service('ServiceAdherent',['$http',function($http){
                             					nom : itemFromServeur.nom,
                             					prenom : itemFromServeur.prenom,
                             					date_naissance : itemFromServeur.date_naissance,
-                            					cotisation_correcte : itemFromServeur.cotisation_correcte
+                            					cotisation_correcte : itemFromServeur.cotisation_correcte,
+                            					nombre_media : itemFromServeur.nombre_media
                                         };
                                         self.adherents.push(itemForIHM);
                                         promise = undefined ;
