@@ -110,6 +110,7 @@
 				<!-- premiere ligne contenant le titre des colonnes -->
 				<thead>
 					<tr id="premiereLigne">
+
 					</tr>
 				</thead>
 				<!-- les autres lignes du tableau
@@ -118,13 +119,24 @@
 
 				<tbody id="bodyRecherche">
 					<tr ng-repeat="adherent in adherentController.adherents"> <!-- |  filter : {id : rechercher0 , nom : rechercher1 , prenom : rechercher2, date_naissance : rechercher3 } | filter : search"> -->
-						<th ng-bind="adherent.id"></th>
-						<th ng-bind="adherent.nom"></th>
-						<th ng-bind="adherent.prenom"></th>
-						<th ng-bind="adherent.email"></th>
-						<th ng-bind="adherent.date_naissance | DateFormat"></th>
-						<th ng-bind="adherent.cotisation_correcte?'Oui':'Non'"></th>
-						<th ng-bind="adherent.nombre_media"></th>
+						<td ng-bind="adherent.id"></td>
+						<td ng-bind="adherent.nom"></td>
+						<td ng-bind="adherent.prenom"></td>
+						<td ng-bind="adherent.email"></td>
+						<td ng-bind="adherent.date_naissance | DateFormat"></td>
+						<td ng-bind="adherent.cotisation_correcte?'Oui':'Non'"></td>
+						<td ng-bind="adherent.nombre_media"></td>
+						<td>
+							<button type="button" class="btn btn-default" ng-click="adherentCtrl.louerMedia(media)">
+								<span class="glyphicon glyphicon-new-window"></span>
+							</button>
+							<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media)">
+								<span class="glyphicon glyphicon-zoom-in"></span>
+							</button>
+							<button type="button" class="btn btn-default" ng-click="mediaCtrl.editMedia(media)">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -140,7 +152,7 @@
 			//tableau contenant le nom des colonnes
 			var tableauColonne = [ "Id adhérent", "Nom", "Prenom",
 					"Email", "Date de naissance", "A jour cotisation",
-					"Nombre de médias" ];
+					"Nombre de médias","Action" ];
 			var tableauDonnees = [
 					[ 8923, "dimitri lanoe", "22/10/92", "Oui", 10 ],
 					[ 9201, "nicolas jean", "23/04/91", "Oui", 8 ],
@@ -174,8 +186,7 @@
 				}
 				//On ajoute le titre de la colonne avec un bouton pour rechercher
 				$("#premiereLigne").append(
-						'<th class="' + tableauCouleurs[colonne] + '"> <h2>'
-								+ valeurColonne + '</h2>'
+						'<th>'+ valeurColonne + '</h2>'
 								+ inputRechercherPremiere + '</th>');
 
 			}
