@@ -21,7 +21,7 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function($http) 
 	}
 	
 	self.getMedia = function(id){
-		return $http.get(urlInfo, {params:{id:id}}).then(function(response) {
+		return $http.get(urlUnMedia, {params:{id:id}}).then(function(response) {
 			return response.data;
 		});		
 	}
