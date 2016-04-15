@@ -38,8 +38,11 @@
 				<tr ng-show="mediaCtrl.medias==undefined">
 					<td colspan="7">Chargement des medias en cours</td>
 				</tr>
-				<tr ng-show="mediaCtrl.hasErrorProduits()">
+				<tr ng-show="mediaCtrl.medias.length==0">
 					<td colspan="7">Aucun media trouvé</td>
+				</tr>
+				<tr ng-show="mediaCtrl.hasErrorProduits()">
+					<td colspan="7">Une erreur est survenue</td>
 				</tr>
 				<tr ng-repeat="media in mediaCtrl.medias">
 					<td ng-bind="media.id"></td>
@@ -63,21 +66,27 @@
 			</tbody>
 		</table>
 	</div>
-	
+
 	<nav>
-		<ul class="pagination">
-			<li><a href="#/media"> <span>&laquo;</span></a></li>
-			<li ng-repeat="n in [] |for:mediaCtrl.info.pages">
-				<a href="#/media" ng-bind="n"  ng-click="mediaCtrl.goPage(n)"></a>
+		<ul ng-if="mediaCtrl.info==undefined">
+				<li colspan="7">Chargement en cours</li>
+		</ul>
+		<ul class="pagination" ng-if="mediaCtrl.info!=undefined">
+			<li class= "{{mediaCtrl.pageDisabled(true)}}">
+				<a href="#/media" ng-click="mediaCtrl.pagePrec()"> <span>&laquo;</span></a>
 			</li>
-			<li><a href="#/media"><span >&raquo;</span></a></li>
+			<li ng-repeat="n in [] |for:mediaCtrl.info.pages" class="{{mediaCtrl.pageActive(n)}}">
+				<a href="#/media" ng-bind="n+1" ng-click="mediaCtrl.pageN(n)"></a>
+			</li>
+			<li class="{{mediaCtrl.pageDisabled(false)}}">
+				<a href="#/media" ng-click="mediaCtrl.pageSuiv()"><span>&raquo;</span></a>
+			</li>
 		</ul>
 	</nav>
 
 
 	<div ng-show="mediaCtrl.hasErrorMedias()">
-		<div ng-include="'module-media/templates/creerMedia.html'">
-		</div>
+		<div ng-include="'module-media/templates/creerMedia.html'"></div>
 	</div>
 
 

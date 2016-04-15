@@ -3,21 +3,25 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function($http) 
 	var self = this;
 	var lignes = [];
 	var url = "http://10.34.10.140:8080/resource/media";
+	var urlUnMedia = url +".accession";
+	var urlRecherche = url + ".recherche";
+	var urlInfo = urlRecherche + ".taille";
+	
 	
 	self.getList = function(params){
-		return $http.get(url+".recherche", {params:params}).then(function(response) {
+		return $http.get(urlRecherche, {params:params}).then(function(response) {
 			return response.data;
 		});
 	}
 	
-	self.getInfo = function(){
-		return $http.get(url+".recherche.taille").then(function(response) {
+	self.getInfo = function(params){
+		return $http.get(urlInfo, {params:params}).then(function(response) {
 			return response.data;
 		});
 	}
 	
 	self.getMedia = function(id){
-		return $http.get(url+".accession", {params:{id:id}}).then(function(response) {
+		return $http.get(urlInfo, {params:{id:id}}).then(function(response) {
 			return response.data;
 		});		
 	}
