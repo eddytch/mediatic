@@ -1,5 +1,5 @@
 var moduleAdherent = angular.module("ModuleAdherent") ;
-moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
+moduleAdherent.controller('AdherentController',['$scope','ServiceAdherent', '$location', function($scope,ServiceAdherent,$location){
 
     self = this ;
     this.pageCourante = 0 ;
@@ -10,8 +10,6 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
 
     this.numCritPrec = 0 ;
     this.valuePrec = "" ;
-
-
 
     this.noms = ['id','nom','prenom','email'] ;
 
@@ -43,7 +41,6 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
                 self.pageCourante = 0 ;
     }
 
-
     this.getAdherents = function(numCrit, value){
         if(numCrit != self.numCritPrec || value != self.valuePrec)
                     self.pageCourante = 0 ;
@@ -61,11 +58,11 @@ moduleAdherent.controller('AdherentController',function($scope,ServiceAdherent){
             delete params[nom] ;
 
         service.getAdherents(self.rechCrit) ;
-
-
-
     }
     this.getPage(this.pageCourante) ;
 
+    this.voirAdherent = function(index){
+        $location.path("/adherent="+index) ;
+    }
 
-}) ;
+}]) ;

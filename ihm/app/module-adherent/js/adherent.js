@@ -12,4 +12,9 @@ angular.module('ModuleAdherent').config(function($routeProvider){
     		controller : 'CreationAdherentController',
     		controllerAs : 'creationAdherentController'
     });
+    $routeProvider.when('/adherent=:id', {
+    		templateUrl : './module-adherent/templates/consultationAdherent.html',
+    		controller : 'voirAdherent-controller.js',
+    		controllerAs : 'voirAdherentCtrl'
+    });
 });
