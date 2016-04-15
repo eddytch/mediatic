@@ -4,7 +4,8 @@ moduleAdherent.controller('CreationAdherentController',['$scope','$filter','Serv
     var self = this ;
     this.service = ServiceAdherent ;
 
-    this.addAdherent = function(){
+    this.addAdherent = function(isValid){
+        if(!isValid) { return }
         var dateNConv = $filter('date')($scope.dateN,"dd/MM/yyyy") ;
         var dateCotisConv = $filter('date')($scope.dateCotis,"dd/MM/yyyy") ;
 

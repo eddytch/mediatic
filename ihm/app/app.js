@@ -1,4 +1,4 @@
-angular.module('ModuleApp', ['ngRoute', 'ModuleMenu','ModuleMedia','ModuleAdherent','ModuleGlobal','ModuleLogin']);
+angular.module('ModuleApp', ['ngRoute', 'ngMessages', 'ModuleMenu','ModuleMedia','ModuleAdherent','ModuleGlobal','ModuleLogin']);
 //'ModuleGlobal', 'ModuleMedia', 'ModuleAdherent','ngRoute'
 
 angular.module('ModuleApp').config(function($httpProvider){

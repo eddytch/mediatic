@@ -1,12 +1,13 @@
 
 	<!-- Body -->
-	<div class="container-fluid" ng-app="ModuleAdherent" >
+	<div class="container-fluid">
 		<section>
 			<div class="titre col-sm-offset-3 cod-sm-6 cod-xs-6">
 				<h2>Ajouter un Adhérent</h2>
 			</div>
 			<div>
-				<form class="form-horizontal" ng-submit="creationAdherentController.addAdherent()" > <!--method="post" action=".">-->
+
+				<form name="formAdherent" class="form-horizontal"  ng-submit="creationAdherentController.addAdherent(formAdherent.$valid)" novalidate> <!--method="post" action=".">-->
 					<div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-5 col-lg-ofset-2 col-lg-4">
 						<div class="row">
 							<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Informations personnelles</label>
@@ -20,8 +21,10 @@
 								<span class="topLeft input-group-addon" id="basic-addon1">
 									<span class="fa fa-user myIconWidth"></span>
 								</span>
-								<input class="form-control" ng-model="nom" name="nom" placeholder="Nom" type="text" required="required" aria-describedby="basic-addon1" />
-								<input class="form-control" ng-model="prenom" name="prenom" placeholder="Prénom" type="text" required="required" aria-describedby="basic-addon1" />
+								<input class="form-control" ng-model="nom" id="nom" name="nom" placeholder="Nom" type="text"  required="required" aria-describedby="basic-addon1" />
+								<div ng-messages="formAdherent.nom.$error" role="alert"><div ng-messages-include="module-adherent/templates/erreurs.html"></div></div>
+								<input class="form-control" ng-model="prenom" id="prenom" name="prenom" placeholder="Prénom" type="text"  required="required" aria-describedby="basic-addon1" />
+
 							</div>
 							<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="email">E-mail :</label>
@@ -30,7 +33,8 @@
 								<span class="input-group-addon" id="basic-addon1">
 									<span>@</span>
 								</span>
-								<input name="email" ng-model="email" placeholder="monEmail@exemple.fr" type="email" class="form-control" required="required" aria-describedby="basic-addon1" />
+								<input id="email" name="email" ng-model="email" placeholder="monEmail@exemple.fr" type="email" class="form-control"  required="required" aria-describedby="basic-addon1" />
+								<div ng-messages="formAdherent.email.$error"><div ng-messages-include="module-adherent/templates/erreurs.html"></div></div>
 							</div>
 							<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 								<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="dateN">Né(e) le :</label>
@@ -39,7 +43,8 @@
 								<span class="input-group-addon" id="basic-addon1">
 									<span class="fa fa-birthday-cake"></span>
 								</span>
-								<input name="dateN" ng-model="dateN"  placeholder="jj/mm/aaaa" type="date" class="form-control" required="required" autocomplete="on" max="2016-12-31" />
+								<input id="dateN" name="dateN" ng-model="dateN"  placeholder="jj/mm/aaaa" type="date" class="form-control"  required="required" autocomplete="on" max="2016-12-31" />
+								<div ng-messages="formAdherent.dateN.$error"><div ng-messages-include="module-adherent/templates/erreurs.html"></div></div>
 							</div>
 						</div>
 					</div>
@@ -52,25 +57,25 @@
 								<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="numVoie">N° et voie :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input name="numVoie" ng-model="numVoie" type="text" class="form-control" placeholder="1, rue de ......." />
+								<input name="numVoie" ng-model="numVoie" type="text" class="form-control" required="required" placeholder="1, rue de ......." />
 							</div>
 							<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 								<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="compl">Complément :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input name="compl" ng-model="compl" placeholder="lieu dit, boite postale, ...." type="text" class="form-control" />
+								<input name="compl" ng-model="compl" placeholder="lieu dit, boite postale, ...." required="required"  type="text" class="form-control" />
 							</div>
 							<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 								<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="cP">Code postal :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input name="cP" ng-model="cP" placeholder="Code postal" type="text" maxlength="5" pattern="[0-9]{5}" class="form-control" />
+								<input name="cP" ng-model="cP" placeholder="Code postal" required="required" type="text" maxlength="5" pattern="[0-9]{5}" class="form-control" />
 							</div>
 							<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 								<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="ville">Ville :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input name="ville" ng-model="ville" placeholder="Ville" type="text" class="form-control" />
+								<input name="ville" ng-model="ville" placeholder="Ville" required="required" type="text" class="form-control" />
 							</div>
 						</div>
 					</div>
@@ -83,13 +88,13 @@
 								<label class="col-xs-12 col-s-12 col-md-12 col-lg-12" for="dateCotis">Cotisation payée le :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input name="dateCotis" ng-model="dateCotis "  type="date" class="form-control" placeholder="jj/mm/aaaa" />
+								<input name="dateCotis" ng-model="dateCotis "  type="date" class="form-control" required="required" placeholder="jj/mm/aaaa" />
 							</div>
 							<div class="hidden-xs hidden-sm col-md-6 col-lg-6">
 								<label class="col-xs-12 col-sm-12 col-md-12 col-lg-12" for="montantCotis">Montant de la cotisation :</label>
 							</div>
 							<div class="input-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input name="montantCotis" ng-model="montantCotis" placeholder="xx,xx " type="number" class="form-control " />
+								<input name="montantCotis" ng-model="montantCotis" placeholder="xx,xx " required="required"  type="number" class="form-control " />
 								<span class="input-group-addon">€</span>
 							</div>
 						</div>
@@ -100,6 +105,7 @@
 						</div>
 					</div>
 				</form>
+				<!--ng-messages-include="module-adherent/templates/erreurs.html"></div>-->
 			</div>
 		</section>
 	</div>
