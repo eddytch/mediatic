@@ -127,13 +127,10 @@
 						<td ng-bind="adherent.cotisation_correcte?'Oui':'Non'"></td>
 						<td ng-bind="adherent.nombre_media"></td>
 						<td>
-							<button type="button" class="btn btn-default" ng-click="adherentCtrl.louerMedia(media)">
-								<span class="glyphicon glyphicon-new-window"></span>
-							</button>
-							<button type="button" class="btn btn-default" ng-click="mediaCtrl.voirMedia(media)">
+							<button type="button" class="btn btn-default" ng-click="adherentController.voirAdherent(adherent)">
 								<span class="glyphicon glyphicon-zoom-in"></span>
 							</button>
-							<button type="button" class="btn btn-default" ng-click="mediaCtrl.editMedia(media)">
+							<button type="button" class="btn btn-default" ng-click="adherentController.editAdherent(adherent)">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</button>
 						</td>
